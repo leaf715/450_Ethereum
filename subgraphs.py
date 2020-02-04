@@ -24,7 +24,7 @@ class SubGraph:
         edge_labels = [edge.name for edge in edges]
         return nodes, edge_labels
 
-def load_graphs(file1, file2):
+def load_subgraphs(file1, file2):
     from trace_parser import parse_file
     from struct_dump import _pprint
     assert file1[-5:] == ".json"
@@ -40,7 +40,10 @@ def load_graphs(file1, file2):
         tx = trace[i]
         graph = Graph(tx)
         graphs.append(graph)
-    return graphs
+    subgraphs = []
+    for i in graphs:
+        subgraphs.append(get_subgraphs(i))
+    return subgraphs
 
 def get_subgraphs(graph):
     visited = set()
@@ -93,14 +96,12 @@ def get_subgraphs(graph):
 
 
 def test(file1, file2):
-    graphs = load_graphs(file1, file2)
+    subgraphs = load_subgraphs(file1, file2)
     print(file1)
-    subgraphs1 = get_subgraphs(graphs[0])
-    for subgraph in subgraphs1:
+    for subgraph in subgraphs[0]:
             print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
     print(file2)
-    subgraphs2 = get_subgraphs(graphs[1])
-    for subgraph in subgraphs2:
+    for subgraph in subgraphs[1]:
             print(str(subgraph.event_count) + " " + str(subgraph.normal_count))
     # _pprint(subgraphs1[0])
 
