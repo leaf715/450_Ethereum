@@ -9,6 +9,7 @@ class SubGraph:
         self.edges_map = {} # edge_id: int -> edge: Edge
         self.event_count = 0
         self.normal_count = 0
+        self.key_node = None
 
     def successors_of(self, node):
         if node.is_event:
@@ -88,6 +89,7 @@ def get_subgraphs(graph):
             visited.add((event_node.event_id, True))
             subgraph.event_count = len(subgraph.event_nodes_map)
             subgraph.normal_count = len(subgraph.normal_nodes_map)
+            subgraph.key_node = str(event_node.call_nonce)+" "+str(event_node.event_id)+" "+event_node.name
             subgraphs.append(subgraph)
             print(str(event_node.call_nonce)+" "+str(event_node.event_id)+" "+event_node.name)
             print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
