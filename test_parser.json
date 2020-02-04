@@ -1,0 +1,3174 @@
+[
+  {
+    "__class__": "<class '__main__.Transaction'>",
+    "block_number": 4501736,
+    "call_traces": [
+      {
+        "__class__": "<class '__main__.CallTrace'>",
+        "call_chain": [],
+        "call_nonce": 0,
+        "call_type": "call",
+        "code": "",
+        "code_address": "0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4",
+        "data": "0xe46dcfeb0000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000ae7168deb525862f4fee37d987a971b385b96952",
+        "events": [
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 4,
+                    "offset": null
+                  }
+                ],
+                "value": "0x101"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000400",
+                    "dfg_node_id": 3,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 0,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 10
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 15,
+                    "offset": null
+                  }
+                ],
+                "value": "0x157"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 14,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 1,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 36
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 18,
+                    "offset": null
+                  }
+                ],
+                "value": "0x175"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 17,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 2,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 47
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 21,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1a5"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 20,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 3,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 58
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 24,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1c7"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 23,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 4,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 69
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 27,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1e9"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 26,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 5,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 80
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 30,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1fb"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 29,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 6,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 91
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 33,
+                    "offset": null
+                  }
+                ],
+                "value": "0x21d"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 32,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 7,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 102
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 36,
+                    "offset": null
+                  }
+                ],
+                "value": "0x23b"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 35,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 8,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 113
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 39,
+                    "offset": null
+                  }
+                ],
+                "value": "0x25d"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 38,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 9,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 124
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 42,
+                    "offset": null
+                  }
+                ],
+                "value": "0x284"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 41,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 10,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 135
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 45,
+                    "offset": null
+                  }
+                ],
+                "value": "0x299"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 44,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 11,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 146
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 48,
+                    "offset": null
+                  }
+                ],
+                "value": "0x2ae"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 47,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 12,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 157
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 51,
+                    "offset": null
+                  }
+                ],
+                "value": "0x2ec"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 50,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 13,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 168
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 54,
+                    "offset": null
+                  }
+                ],
+                "value": "0x301"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 53,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 14,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 179
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 57,
+                    "offset": null
+                  }
+                ],
+                "value": "0x316"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 56,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 15,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 190
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 60,
+                    "offset": null
+                  }
+                ],
+                "value": "0x349"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 59,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 16,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 201
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 63,
+                    "offset": null
+                  }
+                ],
+                "value": "0x378"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 62,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 17,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 212
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 66,
+                    "offset": null
+                  }
+                ],
+                "value": "0x3cf"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 65,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 18,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 223
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 69,
+                    "offset": null
+                  }
+                ],
+                "value": "0x3ed"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 68,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 19,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 234
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 72,
+                    "offset": null
+                  }
+                ],
+                "value": "0x3f5"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000100",
+                    "dfg_node_id": 71,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 20,
+            "flags": [
+              {
+                "": [
+                  1006,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "JUMPI",
+            "pc": 1011
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 135,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1048"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "02000000",
+                    "dfg_node_id": 134,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 21,
+            "flags": [
+              {
+                "": [
+                  1072,
+                  "NF"
+                ],
+                "__class__": "<class 'tuple'>"
+              },
+              {
+                "": [
+                  1079,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              },
+              {
+                "": [
+                  1084,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              },
+              {
+                "": [
+                  4156,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "JUMPI",
+            "pc": 4162
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 143,
+                    "offset": null
+                  }
+                ],
+                "value": "0xa41"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "02000000",
+                    "dfg_node_id": 142,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 22,
+            "flags": [
+              {
+                "": [
+                  2613,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "JUMPI",
+            "pc": 2619
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 144,
+                    "offset": null
+                  }
+                ],
+                "value": "0x2"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 128,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 23,
+            "flags": [
+              {
+                "": [
+                  2630,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 2630
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 151,
+                    "offset": null
+                  }
+                ],
+                "value": "0x4"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00200000",
+                    "dfg_node_id": 150,
+                    "offset": null
+                  }
+                ],
+                "value": "0x4444"
+              }
+            ],
+            "event_id": 24,
+            "flags": [
+              {
+                "": [
+                  2641,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 2641
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 160,
+                    "offset": null
+                  }
+                ],
+                "value": "0xf27"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "02000000",
+                    "dfg_node_id": 159,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 25,
+            "flags": [
+              {
+                "": [
+                  3867,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "JUMPI",
+            "pc": 3873
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 161,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 162,
+                    "offset": null
+                  }
+                ],
+                "value": "0x2"
+              }
+            ],
+            "event_id": 26,
+            "flags": [],
+            "name": "SSTORE",
+            "pc": 3888
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 171,
+                    "offset": null
+                  }
+                ],
+                "value": "0x6"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000080",
+                    "dfg_node_id": 169,
+                    "offset": null
+                  }
+                ],
+                "value": "0xae7168deb525862f4fee37d987a971b385b96952"
+              }
+            ],
+            "event_id": 27,
+            "flags": [
+              {
+                "": [
+                  3909,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 3909
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000080",
+                    "dfg_node_id": 184,
+                    "offset": null
+                  }
+                ],
+                "value": "0x64dc844c661b03668fecb6167617b24b62f1a2e695cbeaa5bd88687febd241e0"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 185,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 28,
+            "flags": [
+              {
+                "": [
+                  3939,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 3939
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 188,
+                    "offset": null
+                  }
+                ],
+                "value": "0xfed"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 187,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 29,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 3949
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 192,
+                    "offset": null
+                  }
+                ],
+                "value": "0xf7b"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 191,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 30,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 3961
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 210,
+                    "offset": null
+                  }
+                ],
+                "value": "0x7"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 203,
+                    "offset": null
+                  }
+                ],
+                "value": "0xae7168deb525862f4fee37d987a971b385b96952"
+              }
+            ],
+            "event_id": 31,
+            "flags": [
+              {
+                "": [
+                  3968,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              },
+              {
+                "": [
+                  4007,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 4007
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 219,
+                    "offset": null
+                  }
+                ],
+                "value": "0xfbf"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 218,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 32,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 4029
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 237,
+                    "offset": null
+                  }
+                ],
+                "value": "0x64dc844c661b03668fecb6167617b24b62f1a2e695cbeaa5bd88687febd241e0"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 213,
+                    "offset": null
+                  }
+                ],
+                "value": "0x2"
+              }
+            ],
+            "event_id": 33,
+            "flags": [
+              {
+                "": [
+                  4039,
+                  "ZF"
+                ],
+                "__class__": "<class 'tuple'>"
+              },
+              {
+                "": [
+                  4067,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 4067
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 243,
+                    "offset": null
+                  }
+                ],
+                "value": "0xfed"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "cond",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 242,
+                    "offset": null
+                  }
+                ],
+                "value": "0x1"
+              }
+            ],
+            "event_id": 34,
+            "flags": [],
+            "name": "JUMPI",
+            "pc": 3949
+          },
+          {
+            "__class__": "<class '__main__.Event'>",
+            "arguments": [
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "loc",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000000",
+                    "dfg_node_id": 244,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              },
+              {
+                "__class__": "<class '__main__.EventArgument'>",
+                "name": "val",
+                "segments": [
+                  {
+                    "__class__": "<class '__main__.ArgumentSegmentProperty'>",
+                    "bitmap": "00000200",
+                    "dfg_node_id": 125,
+                    "offset": null
+                  }
+                ],
+                "value": "0x0"
+              }
+            ],
+            "event_id": 35,
+            "flags": [
+              {
+                "": [
+                  4082,
+                  "WF"
+                ],
+                "__class__": "<class 'tuple'>"
+              }
+            ],
+            "name": "SSTORE",
+            "pc": 4082
+          }
+        ],
+        "from_address": "0xae7168deb525862f4fee37d987a971b385b96952",
+        "path": [
+          0,
+          11,
+          37,
+          48,
+          59,
+          70,
+          81,
+          92,
+          103,
+          114,
+          125,
+          136,
+          147,
+          158,
+          169,
+          180,
+          191,
+          202,
+          213,
+          224,
+          1005,
+          1013,
+          4151,
+          4168,
+          2608,
+          2625,
+          5395,
+          5403,
+          5407,
+          2638,
+          2642,
+          2643,
+          4177,
+          3860,
+          3879,
+          3903,
+          3907,
+          3940,
+          3950,
+          3963,
+          3999,
+          4003,
+          4031,
+          4069,
+          3940,
+          4077,
+          4083,
+          4084,
+          1398,
+          1399,
+          1400,
+          341
+        ],
+        "success": true,
+        "to_address": "0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4",
+        "value": 0
+      }
+    ],
+    "gas_price": 13600000000,
+    "plain_nodes": [
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x101"
+        ],
+        "name": "CONST",
+        "node_id": 4,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 3,
+        "source_node_ids": [
+          2
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "CALLDATASIZE",
+        "node_id": 2,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x157"
+        ],
+        "name": "CONST",
+        "node_id": 15,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 14,
+        "source_node_ids": [
+          12,
+          13
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "AND",
+        "node_id": 12,
+        "source_node_ids": [
+          11,
+          5
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "DIV",
+        "node_id": 11,
+        "source_node_ids": [
+          10,
+          8
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CALLDATA",
+        "node_id": 10,
+        "source_node_ids": [
+          9
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 9,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EXP",
+        "node_id": 8,
+        "source_node_ids": [
+          7,
+          6
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 7,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xe0"
+        ],
+        "name": "CONST",
+        "node_id": 6,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xffffffff"
+        ],
+        "name": "CONST",
+        "node_id": 5,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x173825d9"
+        ],
+        "name": "CONST",
+        "node_id": 13,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x175"
+        ],
+        "name": "CONST",
+        "node_id": 18,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 17,
+        "source_node_ids": [
+          16,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2f54bf6e"
+        ],
+        "name": "CONST",
+        "node_id": 16,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1a5"
+        ],
+        "name": "CONST",
+        "node_id": 21,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 20,
+        "source_node_ids": [
+          19,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x4123cb6b"
+        ],
+        "name": "CONST",
+        "node_id": 19,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1c7"
+        ],
+        "name": "CONST",
+        "node_id": 24,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 23,
+        "source_node_ids": [
+          22,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x52375093"
+        ],
+        "name": "CONST",
+        "node_id": 22,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1e9"
+        ],
+        "name": "CONST",
+        "node_id": 27,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 26,
+        "source_node_ids": [
+          25,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x5c52c2f5"
+        ],
+        "name": "CONST",
+        "node_id": 25,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1fb"
+        ],
+        "name": "CONST",
+        "node_id": 30,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 29,
+        "source_node_ids": [
+          28,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x659010e7"
+        ],
+        "name": "CONST",
+        "node_id": 28,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x21d"
+        ],
+        "name": "CONST",
+        "node_id": 33,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 32,
+        "source_node_ids": [
+          31,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x7065cb48"
+        ],
+        "name": "CONST",
+        "node_id": 31,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x23b"
+        ],
+        "name": "CONST",
+        "node_id": 36,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 35,
+        "source_node_ids": [
+          34,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x746c9171"
+        ],
+        "name": "CONST",
+        "node_id": 34,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x25d"
+        ],
+        "name": "CONST",
+        "node_id": 39,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 38,
+        "source_node_ids": [
+          37,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x797af627"
+        ],
+        "name": "CONST",
+        "node_id": 37,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x284"
+        ],
+        "name": "CONST",
+        "node_id": 42,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 41,
+        "source_node_ids": [
+          40,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x9da5e0eb"
+        ],
+        "name": "CONST",
+        "node_id": 40,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x299"
+        ],
+        "name": "CONST",
+        "node_id": 45,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 44,
+        "source_node_ids": [
+          43,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xb20d30a9"
+        ],
+        "name": "CONST",
+        "node_id": 43,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2ae"
+        ],
+        "name": "CONST",
+        "node_id": 48,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 47,
+        "source_node_ids": [
+          46,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xb61d27f6"
+        ],
+        "name": "CONST",
+        "node_id": 46,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2ec"
+        ],
+        "name": "CONST",
+        "node_id": 51,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 50,
+        "source_node_ids": [
+          49,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xb75c7dc6"
+        ],
+        "name": "CONST",
+        "node_id": 49,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x301"
+        ],
+        "name": "CONST",
+        "node_id": 54,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 53,
+        "source_node_ids": [
+          52,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xba51a6df"
+        ],
+        "name": "CONST",
+        "node_id": 52,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x316"
+        ],
+        "name": "CONST",
+        "node_id": 57,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 56,
+        "source_node_ids": [
+          55,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xc2cf7326"
+        ],
+        "name": "CONST",
+        "node_id": 55,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x349"
+        ],
+        "name": "CONST",
+        "node_id": 60,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 59,
+        "source_node_ids": [
+          58,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xc41a360a"
+        ],
+        "name": "CONST",
+        "node_id": 58,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x378"
+        ],
+        "name": "CONST",
+        "node_id": 63,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 62,
+        "source_node_ids": [
+          61,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xc57c5f60"
+        ],
+        "name": "CONST",
+        "node_id": 61,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x3cf"
+        ],
+        "name": "CONST",
+        "node_id": 66,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 65,
+        "source_node_ids": [
+          64,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xcbf0b0c0"
+        ],
+        "name": "CONST",
+        "node_id": 64,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x3ed"
+        ],
+        "name": "CONST",
+        "node_id": 69,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EQ",
+        "node_id": 68,
+        "source_node_ids": [
+          67,
+          12
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xe46dcfeb"
+        ],
+        "name": "CONST",
+        "node_id": 67,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x3f5"
+        ],
+        "name": "CONST",
+        "node_id": 72,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 71,
+        "source_node_ids": [
+          70
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "CALLVALUE",
+        "node_id": 70,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1048"
+        ],
+        "name": "CONST",
+        "node_id": 135,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 134,
+        "source_node_ids": [
+          133
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "GT",
+        "node_id": 133,
+        "source_node_ids": [
+          132,
+          130
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "SLOAD",
+        "node_id": 132,
+        "source_node_ids": [
+          131
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 131,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 130,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xa41"
+        ],
+        "name": "CONST",
+        "node_id": 143,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 142,
+        "source_node_ids": [
+          141
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "GT",
+        "node_id": 141,
+        "source_node_ids": [
+          140,
+          138
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "SLOAD",
+        "node_id": 140,
+        "source_node_ids": [
+          139
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 139,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 138,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 144,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x44"
+        ],
+        "name": "CALLDATA",
+        "node_id": 128,
+        "source_node_ids": [
+          127
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 127,
+        "source_node_ids": [
+          126,
+          77
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x20"
+        ],
+        "name": "CONST",
+        "node_id": 126,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 77,
+        "source_node_ids": [
+          76,
+          74
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x20"
+        ],
+        "name": "CONST",
+        "node_id": 76,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x4"
+        ],
+        "name": "CONST",
+        "node_id": 74,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x4"
+        ],
+        "name": "CONST",
+        "node_id": 151,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "DIV",
+        "node_id": 150,
+        "source_node_ids": [
+          149,
+          148
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "TIMESTAMP",
+        "node_id": 149,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x15180"
+        ],
+        "name": "CONST",
+        "node_id": 148,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xf27"
+        ],
+        "name": "CONST",
+        "node_id": 160,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 159,
+        "source_node_ids": [
+          158
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "GT",
+        "node_id": 158,
+        "source_node_ids": [
+          157,
+          155
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "SLOAD",
+        "node_id": 157,
+        "source_node_ids": [
+          156
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 156,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 155,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 161,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 162,
+        "source_node_ids": [
+          161,
+          79
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x64"
+        ],
+        "name": "CALLDATA",
+        "node_id": 79,
+        "source_node_ids": [
+          78
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 78,
+        "source_node_ids": [
+          74,
+          75
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x4"
+        ],
+        "name": "CALLDATA",
+        "node_id": 75,
+        "source_node_ids": [
+          74
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 171,
+        "source_node_ids": [
+          161,
+          170
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x5"
+        ],
+        "name": "CONST",
+        "node_id": 170,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "AND",
+        "node_id": 169,
+        "source_node_ids": [
+          168,
+          167
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "CALLER",
+        "node_id": 168,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SUB",
+        "node_id": 167,
+        "source_node_ids": [
+          166,
+          163
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EXP",
+        "node_id": 166,
+        "source_node_ids": [
+          165,
+          164
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 165,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xa0"
+        ],
+        "name": "CONST",
+        "node_id": 164,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 163,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SHA3",
+        "node_id": 184,
+        "source_node_ids": [
+          179,
+          181
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "AND",
+        "node_id": 179,
+        "source_node_ids": [
+          178,
+          177
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "CALLER",
+        "node_id": 178,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SUB",
+        "node_id": 177,
+        "source_node_ids": [
+          176,
+          173
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EXP",
+        "node_id": 176,
+        "source_node_ids": [
+          175,
+          174
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 175,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xa0"
+        ],
+        "name": "CONST",
+        "node_id": 174,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 173,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x105"
+        ],
+        "name": "CONST",
+        "node_id": 181,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 185,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xfed"
+        ],
+        "name": "CONST",
+        "node_id": 188,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 187,
+        "source_node_ids": [
+          186
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "LT",
+        "node_id": 186,
+        "source_node_ids": [
+          180,
+          79
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 180,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xf7b"
+        ],
+        "name": "CONST",
+        "node_id": 192,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 191,
+        "source_node_ids": [
+          190
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 190,
+        "source_node_ids": [
+          189
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "LT",
+        "node_id": 189,
+        "source_node_ids": [
+          180,
+          79
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 210,
+        "source_node_ids": [
+          206,
+          204
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 206,
+        "source_node_ids": [
+          180,
+          205
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 205,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x5"
+        ],
+        "name": "CONST",
+        "node_id": 204,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "AND",
+        "node_id": 203,
+        "source_node_ids": [
+          202,
+          197
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SUB",
+        "node_id": 202,
+        "source_node_ids": [
+          201,
+          198
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EXP",
+        "node_id": 201,
+        "source_node_ids": [
+          200,
+          199
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 200,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xa0"
+        ],
+        "name": "CONST",
+        "node_id": 199,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 198,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x84"
+        ],
+        "name": "CALLDATA",
+        "node_id": 197,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xfbf"
+        ],
+        "name": "CONST",
+        "node_id": 219,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 218,
+        "source_node_ids": [
+          217
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 217,
+        "source_node_ids": [
+          216
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "LT",
+        "node_id": 216,
+        "source_node_ids": [
+          180,
+          79
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SHA3",
+        "node_id": 237,
+        "source_node_ids": [
+          231,
+          214
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "AND",
+        "node_id": 231,
+        "source_node_ids": [
+          230,
+          225
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "SUB",
+        "node_id": 230,
+        "source_node_ids": [
+          229,
+          226
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "EXP",
+        "node_id": 229,
+        "source_node_ids": [
+          228,
+          227
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 228,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xa0"
+        ],
+        "name": "CONST",
+        "node_id": 227,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 226,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x84"
+        ],
+        "name": "CALLDATA",
+        "node_id": 225,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x105"
+        ],
+        "name": "CONST",
+        "node_id": 214,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 213,
+        "source_node_ids": [
+          212,
+          180
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x2"
+        ],
+        "name": "CONST",
+        "node_id": 212,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0xfed"
+        ],
+        "name": "CONST",
+        "node_id": 243,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ISZERO",
+        "node_id": 242,
+        "source_node_ids": [
+          241
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "LT",
+        "node_id": 241,
+        "source_node_ids": [
+          239,
+          79
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [],
+        "name": "ADD",
+        "node_id": 239,
+        "source_node_ids": [
+          238,
+          180
+        ]
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x1"
+        ],
+        "name": "CONST",
+        "node_id": 238,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x0"
+        ],
+        "name": "CONST",
+        "node_id": 244,
+        "source_node_ids": []
+      },
+      {
+        "__class__": "<class '__main__.PlainNode'>",
+        "call_nonce": 0,
+        "extra_info": [
+          "0x24"
+        ],
+        "name": "CALLDATA",
+        "node_id": 125,
+        "source_node_ids": [
+          77
+        ]
+      }
+    ],
+    "tx_hash": "0x05f71e1b2cb4f03e547739db15d080fd30c989eda04d37ce6264c5686e0722c9",
+    "tx_index": 63
+  }
+]
