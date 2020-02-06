@@ -67,21 +67,25 @@ def get_subgraphs(graph):
                         for i in new_node.src_edge_ids:
                             edge = graph.edges_map[i]
                             subgraph.edges_map[i] = edge
-                            enqueue.append((edge.src_node.node_id, edge.src_node.is_event))
+                            if (edge.src_node.node_id, edge.src_node.is_event) not in visited:
+                                enqueue.append((edge.src_node.node_id, edge.src_node.is_event))
                     else:
                         new_node = graph.normal_nodes_map[node_id]
                         subgraph.normal_nodes_map[node_id] = new_node
                         for i in new_node.src_edge_ids:
                             edge = graph.edges_map[i]
                             subgraph.edges_map[i] = edge
-                            enqueue.append((edge.src_node.node_id, edge.src_node.is_event))
+                            if (edge.src_node.node_id, edge.src_node.is_event) not in visited:
+                                enqueue.append((edge.src_node.node_id, edge.src_node.is_event))
                         for i in new_node.dst_edge_ids:
                             edge = graph.edges_map[i]
                             subgraph.edges_map[i] = edge
                             if isinstance(edge.dst_node, NormalNode):
-                                enqueue.append((edge.dst_node.node_id, edge.dst_node.is_event))
+                                if (edge.dst_node.node_id, edge.dst_node.is_event) not in visited:
+                                    enqueue.append((edge.dst_node.node_id, edge.dst_node.is_event))
                             elif isinstance(edge.dst_node, EventNode):
-                                enqueue.append((edge.dst_node.event_id, edge.dst_node.is_event))
+                                if (edge.dst_node.event_id, edge.dst_node.is_event) not in visited:
+                                    enqueue.append((edge.dst_node.event_id, edge.dst_node.is_event))
                             else:
                                 print("error: node is not event or normal")
                 visited.add((node_id, isevent))
