@@ -1,15 +1,17 @@
 import json
 import difflib
 import math
+import time
 import numpy as np
 from dfg_builder import Graph, EventNode, NormalNode
 from mapping_sim import map_score
 from struct_dump import _pprint
 from subgraphs import *
 
-def run_map(file1, file2):
-    dfg_test(file1)
-    dfg_test(file2)
+def run_map(file1, file2, draw):
+    if draw:
+        dfg_test(file1)
+        dfg_test(file2)
     map_score(file1, file2)
 
 def dfg_test(file_name):
@@ -26,4 +28,6 @@ def dfg_test(file_name):
     graphs.append(graph)
 
 if __name__ == "__main__":
-    run_map("./00048615.json", "./00048643.json")
+    start_time = time.time()
+    run_map("./04501736.json", "./04501969.json", False)
+    print("Runtime: "+str(time.time()-start_time))

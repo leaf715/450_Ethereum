@@ -54,6 +54,7 @@ def degree_hist(nodes1, nodes2):
 def sub_sim(subg1, subg2):
     dlibevent = difflib.SequenceMatcher(None, [node.name for node in subg1.event_nodes_map.values()], [node.name for node in subg2.event_nodes_map.values()])
     dlibnormal = difflib.SequenceMatcher(None, [node.name for node in subg1.normal_nodes_map.values()], [node.name for node in subg2.normal_nodes_map.values()])
+# changing ratio() to quick_ratio() reduces runtime ~ 50% but increases score ~ 20
     eventscore = dlibevent.ratio()
     normalscore = dlibnormal.ratio()
     dlibedges = difflib.SequenceMatcher(None, [(edge.dst_node.name, edge.src_node.name) for edge in subg1.edges_map.values()], [(edge.dst_node.name, edge.src_node.name) for edge in subg2.edges_map.values()])
