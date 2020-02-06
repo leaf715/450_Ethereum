@@ -137,6 +137,6 @@ def test(file_name):
     _pprint(graphs)
 
 if __name__ == "__main__":
-    test("./04501969.json")
+    dfg_test("./04501969.json")
 
 # $ python3 dfg_builder.py > test_builder_04501969.json

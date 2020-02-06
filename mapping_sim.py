@@ -107,6 +107,7 @@ def map_score(file1, file2):
         factor+=math.sqrt((subg.event_count + subg.normal_count)/2)
     simscore = tscore/factor
     print(simscore)
+    return simscore
 
 
 if __name__ == "__main__":
