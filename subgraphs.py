@@ -98,24 +98,24 @@ def get_subgraphs(graph):
             subgraph.normal_count = len(subgraph.normal_nodes_map)
             subgraph.key_node = str(event_node.call_nonce)+" "+str(event_node.event_id)+" "+event_node.name
             subgraphs.append(subgraph)
-            print(str(event_node.call_nonce)+" "+str(event_node.event_id)+" "+event_node.name)
-            print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
+            # print(str(event_node.call_nonce)+" "+str(event_node.event_id)+" "+event_node.name)
+            # print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
     subgraphs.sort(key=lambda x: x.event_count + x.normal_count, reverse=True)
     return subgraphs
 
 
-def test(file1, file2):
-    subgraphs = load_subgraphs(file1, file2)
-    print(file1)
+def test(file1, ind1, file2, ind2):
+    subgraphs = load_subgraphs(file1, ind1, file2, ind2)
+    print(file1+"_"+str(ind1))
     for subgraph in subgraphs[0]:
-            print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
-    print(file2)
+            print(subgraph.key_node + " " + str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
+    print(file2+"_"+str(ind2))
     for subgraph in subgraphs[1]:
-            print(str(subgraph.event_count) + " " + str(subgraph.normal_count))
+            print(subgraph.key_node + " " + str(subgraph.event_count) + " " + str(subgraph.normal_count))
     # _pprint(subgraphs1[0])
 
 
 
 
 if __name__ == "__main__":
-    test("./04501736.json", "./04501969.json")
+    test("./04501736.json", 0, "./04501969.json", 0)

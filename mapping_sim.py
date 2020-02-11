@@ -65,12 +65,12 @@ def sub_sim(subg1, subg2):
 
 def map_score(file1, ind1, file2, ind2):
     subgraphs = load_subgraphs(file1, ind1, file2, ind2)
-    print(file1)
+    print(file1[2:-5]+"_"+str(ind1))
     for subgraph in subgraphs[0]:
-            print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
-    print(file2)
+            print(subgraph.key_node + " " + str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
+    print(file2[2:-5]+"_"+str(ind2))
     for subgraph in subgraphs[1]:
-            print(str(subgraph.event_count) + " " + str(subgraph.normal_count))
+            print(subgraph.key_node + " " + str(subgraph.event_count) + " " + str(subgraph.normal_count))
     sgmatrix = []
     if len(subgraphs[0]) > len(subgraphs[1]):
         r = 1
@@ -92,22 +92,24 @@ def map_score(file1, ind1, file2, ind2):
         matched.append(int(y))
         npmat[x] = 0
         npmat[:,y] = 0
+    print("Matches")
     for a, b, score in mappedsgs:
         print(a.key_node + " -> "+b.key_node+": "+str(round(score,2)))
         print(str(a.event_count) + " " + str(a.normal_count)+" -> "+str(b.event_count) + " " + str(b.normal_count))
     unmatched = [j for i, j in enumerate(subgraphs[c]) if i not in matched]
+    print("Unmatched")
     for subg in unmatched:
         print(subg.key_node)
     tscore = 0
     factor = 0
     for a, b, score in mappedsgs:
-        f = math.sqrt((a.event_count + a.normal_count + b.event_count + b.normal_count)/2)
+        f = math.log((a.event_count + a.normal_count + b.event_count + b.normal_count)/2)
         tscore+=f*score
         factor+=f
     for subg in unmatched:
-        factor+=math.sqrt((subg.event_count + subg.normal_count)/2)
+        factor+=math.log((subg.event_count + subg.normal_count)/2)
     simscore = tscore/factor
-    print(simscore)
+    print("Score: "+str(simscore))
     return simscore
 
 

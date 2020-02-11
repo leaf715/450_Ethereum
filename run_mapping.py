@@ -1,4 +1,5 @@
 import json
+import sys
 import difflib
 import math
 import time
@@ -29,5 +30,8 @@ def dfg_test(file_name, ind):
 
 if __name__ == "__main__":
     start_time = time.time()
-    run_map("./00469642.json", 1, "./00469649.json", 0, False)
+    if len(sys.argv) < 2:
+        run_map("./00469642.json", 1, "./00469649.json", 0, False)
+    else:
+        run_map(sys.argv[1], int(sys.argv[2]), sys.argv[3], int(sys.argv[4]), False)
     print("Runtime: "+str(time.time()-start_time))
