@@ -5,7 +5,6 @@ import sys
 from dfg_builder import Graph, EventNode, NormalNode
 from struct_dump import _pprint
 from subgraphs import *
+from run_mapping import *
 
-print(sys.argv)
-print(difflib.SequenceMatcher(None, [1,1,1,1], [1,1,1,1,1]).ratio())
-print(difflib.SequenceMatcher(None, [1,1,1,1,2], [1,1,1,1,1]).ratio())
+dfg_test("./00469642.json", 0)
