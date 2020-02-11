@@ -25,22 +25,25 @@ class SubGraph:
         edge_labels = [edge.name for edge in edges]
         return nodes, edge_labels
 
-def load_subgraphs(file1, file2):
+def load_subgraphs(file1, ind1, file2, ind2):
     from trace_parser import parse_file
     from struct_dump import _pprint
     assert file1[-5:] == ".json"
     assert file2[-5:] == ".json"
-    trace = parse_file(file1)
+    trace1 = parse_file(file1)
+    trace2 = parse_file(file2)
     graphs = []
-    for i in range(len(trace)):
-        tx = trace[i]
-        graph = Graph(tx)
-        graphs.append(graph)
-    trace = parse_file(file2)
-    for i in range(len(trace)):
-        tx = trace[i]
-        graph = Graph(tx)
-        graphs.append(graph)
+    # for i in range(len(trace)):
+    #     tx = trace[i]
+    #     graph = Graph(tx)
+    #     graphs.append(graph)
+    # trace = parse_file(file2)
+    # for i in range(len(trace)):
+    #     tx = trace[i]
+    #     graph = Graph(tx)
+    #     graphs.append(graph)
+    graphs.append(Graph(trace1[ind1]))
+    graphs.append(Graph(trace2[ind2]))
     subgraphs = []
     for i in graphs:
         subgraphs.append(get_subgraphs(i))

@@ -63,8 +63,8 @@ def sub_sim(subg1, subg2):
     hscore = degree_hist(subg1.normal_nodes_map.values(), subg2.normal_nodes_map.values())
     return (2*eventscore + 1.5*normalscore + 1.5*edgescore + hscore)/6
 
-def map_score(file1, file2):
-    subgraphs = load_subgraphs(file1, file2)
+def map_score(file1, ind1, file2, ind2):
+    subgraphs = load_subgraphs(file1, ind1, file2, ind2)
     print(file1)
     for subgraph in subgraphs[0]:
             print(str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
