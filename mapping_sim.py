@@ -114,4 +114,4 @@ def map_score(file1, ind1, file2, ind2):
 
 
 if __name__ == "__main__":
-    map_score("./04501736.json", "./04501969.json")
+    map_score("./04501736.json", 0, "./04501969.json", 0)
