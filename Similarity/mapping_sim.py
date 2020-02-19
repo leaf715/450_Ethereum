@@ -65,10 +65,10 @@ def sub_sim(subg1, subg2):
 
 def map_score(file1, ind1, file2, ind2):
     subgraphs = load_subgraphs(file1, ind1, file2, ind2)
-    print(file1[2:-5]+"_"+str(ind1))
+    print(file1[:-5]+"_"+str(ind1))
     for subgraph in subgraphs[0]:
             print(subgraph.key_node + " " + str(len(subgraph.event_nodes_map)) + " " + str(len(subgraph.normal_nodes_map)))
-    print(file2[2:-5]+"_"+str(ind2))
+    print(file2[:-5]+"_"+str(ind2))
     for subgraph in subgraphs[1]:
             print(subgraph.key_node + " " + str(subgraph.event_count) + " " + str(subgraph.normal_count))
     sgmatrix = []

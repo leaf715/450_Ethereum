@@ -123,20 +123,20 @@ class Graph:
         return nodes, edge_labels
 
 
-def test(file_name):
+def test(file_name, ind):
     from trace_parser import parse_file
     from struct_dump import _pprint
     assert file_name[-5:] == ".json"
     trace = parse_file(file_name)
     graphs = []
-    for i in range(len(trace)):
-        tx = trace[i]
-        graph = Graph(tx)
-        graph.render("%s_%d.gv" % (file_name[:-5], i))
-        graphs.append(graph)
+    # for i in range(len(trace)):
+    tx = trace[ind]
+    graph = Graph(tx)
+    graph.render("%s_%d.gv" % (file_name[:-5], ind))
+    graphs.append(graph)
     _pprint(graphs)
 
 if __name__ == "__main__":
-    dfg_test("./04501969.json")
+    test("./00469642.json", 1)
 
 # $ python3 dfg_builder.py > test_builder_04501969.json
