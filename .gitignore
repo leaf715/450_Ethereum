@@ -1,3 +1,5 @@
 __pycache__
 /*.gv
 /*.pdf
+ContractDB/State_DB
+ContractDB/traces
