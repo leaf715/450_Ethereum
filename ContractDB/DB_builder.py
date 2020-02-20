@@ -3,7 +3,7 @@ import os
 import glob
 import shutil
 
-class DB_builder:
+class DB_Builder:
     def __init__(self, log_dir, level_size):
         if not os.path.isdir(log_dir):
             os.mkdir(log_dir)
@@ -93,5 +93,5 @@ class DB_builder:
 
 
 if __name__ == "__main__":
-    DB = DB_builder("State_DB/", 2)
+    DB = DB_Builder("State_DB/", 2)
     DB.build_DB("traces/", 12345670, 12345680, True)
