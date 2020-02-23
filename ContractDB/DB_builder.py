@@ -59,11 +59,11 @@ class DB_Builder:
                     trxn_id = str(tx["tx_index"])
                     for call in tx["call_level_traces"]:
                         call_id = str(call["call_id"])
-                        if call["call_type"] == "CREATE" or call["call_type"] == "CREATE2" and call["success"]:
+                        if (call["call_type"] == "CREATE" or call["call_type"] == "CREATE2") and call["success"]:
                             bytestr = call["outputs"][-1]
-                            contract_folder = self.get_folder(bytstr.split("data=0x", 1)[1])
+                            contract_folder = self.get_folder(bytestr.split("data=0x", 1)[1])
                             f_meta = open(contract_folder+"/metadata.log", "a")
-                            f_meta.write(bytstr + " " + block_number + " " + trxn_id + " " + call_id + "\n")
+                            f_meta.write(bytestr + " " + block_number + " " + trxn_id + " " + call_id + "\n")
                             f_meta.close()
                         output_opcodes = [code.split(" ", 1)[0] for code in call["outputs"]]
                         if "SELFDESTRUCT" in output_opcodes and call["success"]:
@@ -94,4 +94,4 @@ class DB_Builder:
 
 if __name__ == "__main__":
     DB = DB_Builder("State_DB/", 2)
-    DB.build_DB("traces/", 12345670, 12345680, True)
+    DB.build_DB("traces/", 12345670, 12345700, True)
