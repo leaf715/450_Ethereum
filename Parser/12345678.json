@@ -1,0 +1,58 @@
+[
+{
+"block_number": 12345678,
+"tx_index": 0,
+"tx_hash": "0xdeadbeafdead0008deadcafedead0010deadbeafdead0018deadcafedead0020",
+"gas_price": 1234567890,
+"origin": "0xdeadbeafdead0008deadcafedead0010deadbeaf",
+"call_level_traces": [
+{
+"success": true,
+"error_message": null,
+"call_type": "CALL",
+"call_id": 0,
+"call_tree_path": "",
+"from": "0xdeadbeafdead0008deadcafedead0010deadbeaf",
+"to": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+"code_addr": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+"value": 123456789012345678,
+"data": "0x1234567890abcdef",
+"path": "0 10 20 30 40 50 40 50 80 60",
+"taints": [
+"0 42 _PUSHED 0xdeadbeafdead0008deadcafedead0010deadbabe | D -1 x",
+"1 43 SSTORE 0x | D 0 loc | D 0 data",
+"2 45 MLOAD 0x0 | I 0 _offset | D null data 0x0 null 0x20",
+"3 46 CALLCODE 0x | D 2 gas | D 0 to | D 2 value | I 2 _inoff | I 2 _inlen | I 0 _outoff | I 2 _outlen",
+"6 null I_AM_FAKE 0xdeadbeef | C -7 fake null 0x1234567890 null"
+],
+"outputs": [
+"SSTORE 1 loc=0xdeadbeafdead0008deadcafedead0010deadbabe data=0xdeadbeafdead0008deadcafedead0010deadbabe",
+"CALLCODE 3 gas=0x0 to=0xdeadbeafdead0008deadcafedead0010deadbabe value=0x0 data=0x status=0x0 returndata=0x"
+]
+},
+{
+"success": false,
+"error_message": "unknown error",
+"call_type": "CALLCODE",
+"call_id": 1,
+"call_tree_path": "0",
+"from": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+"to": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+"code_addr": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+"value": 0,
+"data": "0x",
+"path": "0 12 34 56",
+"taints": [
+"4 0 CALLVALUE 0x0 | D 2 x",
+"5 2 ORIGIN 0xdeadbeafdead0008deadcafedead0010deadbeaf | D -2 x"
+],
+"outputs": []
+}
+],
+"storage_written": {
+"0xdeadbeafdead0008deadcafedead0010deadbabe": {
+"0xdeadbeafdead0008deadcafedead0010deadbabe": 1
+}
+}
+}
+]
