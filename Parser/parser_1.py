@@ -121,12 +121,12 @@ def parse_file(file_name):
     return transactions
 
 
-# def test(file_name):
-#     from struct_dump import _pprint
-#     assert file_name[-5:] == ".json"
-#     _pprint(parse_file(file_name))
+def test(file_name):
+    from struct_dump import _pprint
+    assert file_name[-5:] == ".json"
+    _pprint(parse_file(file_name))
 
 
 if __name__ == "__main__":
-    parse_file("./12345678.json")
+    test("./12345678.json")
 
