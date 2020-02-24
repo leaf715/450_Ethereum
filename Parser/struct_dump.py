@@ -15,7 +15,7 @@ def _struct_to_json(struct):
     if type(struct) is dict:
         d = {}
         for key in struct:
-            key_str = key if type(key) is str else "%s %s" % (type(key), key)
+            key_str = key if type(key) is str else "%s %s" % (type(key), key.hex() if type(key) is bytes else key)
             d[key_str] = _struct_to_json(struct[key])
         return d
     if type(struct) in [tuple, set]:
