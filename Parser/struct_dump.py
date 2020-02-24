@@ -5,6 +5,11 @@ def _struct_to_json(struct):
         return None
     if type(struct) in [int, float, bool, str]:
         return struct
+    if type(struct) is bytes:
+        return {
+            "__class__": str(struct.__class__),
+            "hex()": struct.hex()
+        }            
     if type(struct) is list:
         return [_struct_to_json(x) for x in struct]
     if type(struct) is dict:
@@ -25,7 +30,7 @@ def _struct_to_json(struct):
     return d
 
 def _pretty_json(obj):
-    return json.dumps(obj, indent=2, sort_keys=True)
+    return json.dumps(obj, indent=2, sort_keys=False)
 
 def _pprint(struct):
     print(_pretty_json(_struct_to_json(struct)))
