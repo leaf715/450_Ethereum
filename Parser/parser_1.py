@@ -112,18 +112,20 @@ class CallLevelTrace:
         self.call_type = ct["call_type"]
         self.call_id = ct["call_id"]
         self.call_tree_path=[]
-        temp = (ct["call_tree_path"]).split(" ")
-        for i in temp:
-            self.call_tree_path.append(parse_int(i))
+        if ct["call_tree_path"]!="":
+            temp = (ct["call_tree_path"]).split(" ")
+            for i in temp :
+                self.call_tree_path.append(parse_int(i))
         self.from_address = parse_bytes(ct["from"])
         self.to_address =parse_bytes(ct["to"])
         self.code_address =parse_bytes(ct["code_addr"])
         self.value = ct["value"]
         self.data =parse_bytes(ct["data"])
         self.path =[]
-        temp = (ct["path"]).split(" ")
-        for i in temp:
-            self.path.append(parse_int(i))
+        if ct["call_tree_path"] != "":
+            temp = (ct["path"]).split(" ")
+            for i in temp:
+                self.path.append(parse_int(i))
         self.outputs = [Output(out) for out in ct["outputs"]]
         self.taints = [Taint(taint) for taint in ct["taints"]]
 
