@@ -11,7 +11,7 @@ class DB_Builder:
         self.level_size = level_size
 
     def get_trace(self, dir, i):
-        return dir+str(i)[:5]+"k/"+i+".json"
+        return dir+self.num_str8(i)[:5]+"k/"+i+".json"
 
     def num_str8(self, i):
         num_str = str(i)
