@@ -112,7 +112,10 @@ def gen_traces(start, stop, trace_dir):
                             storage[parsed[2][4:]] = {parsed[3][5:]: parsed[1]}
             trxn["storage_written"] = storage
             trxns.append(trxn)
-        with open(trace_dir+str(block)+".json", "w") as f:
+        trace_folder = trace_dir+str(block)[:5]+"k/"
+        if not os.path.isdir(trace_folder):
+            os.mkdir(trace_folder)
+        with open(trace_folder+str(block)+".json", "w") as f:
             f.write(json.dumps(trxns, indent=2))
 
 if __name__ == "__main__":
