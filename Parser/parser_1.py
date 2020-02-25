@@ -2,22 +2,52 @@ import json
 import pprint
 
 def parse_int(val):
+
     if val is not None and val!="" and val!="null":
         val=int(val)
+    else:
+        val = None
     return val
 
 def parse_bytes(val):
-    by=val.encode()
-    return (by)
+    string=(str(val))[2:]
+    l=len(string)
+    if l>0:
+        if l%2!=0:
+            string="0"+string
+        try:
+            by=bytes.fromhex((string))
+            return (by)
+        except Exception as e:
+            print(e)
+    else:
+        b="".encode()
+        return b
+
 
 def parse_hexint(val):
     if val is not None and val!="" and val!="null":
         val = int(val[2:], 16)
+    else :
+        val=None
     return val
 
 def parse_parameter(val):
     temp=val.split("=")
     return temp[0],temp[1]
+
+def parse_dict(val):
+    dic={}
+    dic1={}
+    for i in val:
+        v=parse_bytes(i)
+        for j in (val.values()):
+            for k in j.keys():
+                h=parse_bytes(k)
+                dic1[h]=j[k]
+        dic[v]=dic1
+        return dic
+
 
 
 class Dependency:
@@ -106,11 +136,11 @@ class TransactionLevelTrace:
     def parse_from(self, tx):
         self.block_number = tx["block_number"]
         self.tx_index = tx["tx_index"]
-        self.tx_hash = parse_bytes(str(tx["tx_hash"]))
+        self.tx_hash = parse_bytes((tx["tx_hash"]))
         self.gas_price = tx["gas_price"]
         self.origin= parse_bytes(tx["origin"])
-        self.storage_written=tx["storage_written"]
-        self.call_traces = [CallLevelTrace(ct) for ct in tx["call_level_traces"]]
+        self.storage_written=parse_dict(tx["storage_written"])
+        self.call_level_traces = [CallLevelTrace(ct) for ct in tx["call_level_traces"]]
 
 
 def parse_file(file_name):
