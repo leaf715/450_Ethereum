@@ -81,11 +81,11 @@ class DB_Builder:
                             f_call = open(contract_folder+"/call.log", "a")
                             f_call.write(block_number + " " + trxn_id + " " + call_id + "\n")
                             f_call.close()
-                    for bytestr in tx["storage_written"]:
+                    for bytestr in tx["storage_written"].keys():
                         contract_folder = self.get_folder(bytestr)
                         f_sw = open(contract_folder+"/storage-write.log", "a")
-                        for slot in tx["storage_written"][bytestr]:
-                            f_sw.write(slot + " " + block_number + " " + trxn_id + "\n")
+                        for slot in tx["storage_written"][bytestr].keys():
+                            f_sw.write(slot + " " + block_number + " " + str(tx["storage_written"][bytestr][slot]) + "\n")
                         f_sw.close()
             f_read.seek(0)
             f_read.write(self.num_str8(trace)+"\n")

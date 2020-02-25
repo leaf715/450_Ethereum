@@ -6,9 +6,17 @@ import random
 
 null = None
 output_options = ["SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
+contract1 = ["0xabcd", "0xabde", "0xaede", "0xa13e", "0xa13e", "0xa13e"]
+contract2 = [hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:] for i in range(6)]
+for i in range(3):
+    contract2.append(contract2[0])
+    contract2.append(contract2[1])
+
+def rand_trxn():
+    return hex(random.randint(268435456, 4294967295))+hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:]
 
 def rand_bytestring():
-    return hex(random.randint(268435456, 4294967295))
+    return random.choice(contract1) + random.choice(contract2)
 
 def create_call(call_id, call_code, caller, caller_id, to_code):
     call = {}
@@ -44,6 +52,7 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
             output_code = random.choice(output_options)
             output_line = output_code
             if output_code == "SELFDESTRUCT":
+                output_line = "SELFDESTRUCT 42 address="+to_code
                 outputs.append(output_line)
                 break
             if output_code == "CALL":
@@ -72,7 +81,7 @@ def gen_traces(start, stop, trace_dir):
             trxn = {}
             trxn["block_number"] = block
             trxn["tx_index"] = tx
-            trxn["tx_hash"] = rand_bytestring()
+            trxn["tx_hash"] = rand_trxn()
             trxn["gas_price"] = random.randint(100,1000)*10
             trxn["origin"] = rand_bytestring()
             caller = trxn["origin"]
@@ -95,11 +104,16 @@ def gen_traces(start, stop, trace_dir):
                 for output in call["outputs"]:
                     parsed = output.split(" ")
                     if parsed[0] == "SSTORE":
-                        storage[parsed[2][4:]] = {parsed[3][5:]: parsed[1]}
+                        if parsed[2][4:] in storage:
+                            dict = storage[parsed[2][4:]]
+                            dict[parsed[3][5:]] = parsed[1]
+                            storage[parsed[2][4:]] = dict
+                        else:
+                            storage[parsed[2][4:]] = {parsed[3][5:]: parsed[1]}
             trxn["storage_written"] = storage
             trxns.append(trxn)
         with open(trace_dir+str(block)+".json", "w") as f:
-            f.write(json.dumps(trxns))
+            f.write(json.dumps(trxns, indent=2))
 
 if __name__ == "__main__":
     trace_dir = "traces/"
