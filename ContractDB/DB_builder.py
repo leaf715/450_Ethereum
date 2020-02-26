@@ -85,7 +85,7 @@ class DB_Builder:
                         contract_folder = self.get_folder(bytestr)
                         f_sw = open(contract_folder+"/storage-write.log", "a")
                         for slot in tx["storage_written"][bytestr].keys():
-                            f_sw.write(slot + " " + block_number + " " + str(tx["storage_written"][bytestr][slot]) + "\n")
+                            f_sw.write(slot + " " + block_number + " " + trxn_id + "\n")
                         f_sw.close()
             f_read.seek(0)
             f_read.write(self.num_str8(trace)+"\n")
@@ -94,4 +94,4 @@ class DB_Builder:
 
 if __name__ == "__main__":
     DB = DB_Builder("State_DB/", 2)
-    DB.build_DB("traces/", 12345670, 12345700, True)
+    DB.build_DB("traces/", 12345670, 12345705, True)

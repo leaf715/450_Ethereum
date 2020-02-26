@@ -16,9 +16,8 @@ class Cross_Linker:
     def get_trace(self, i):
         return self.trace_dir+i[:5]+"k/"+i+".json"
 
-    def get_state_folder(self, i):
-        bytestr = "0x"+num_str8(i)
-        folder = self.log_dir+bytestr[:2+self.level_size]+"/"+bytestr[:2+2*self.level_size]+"/"+bytestr[:2+3*self.level_size]+"/"+bytestr+"/"
+    def get_state_folder(self, bytestr):
+        return self.log_dir+bytestr[:2+self.level_size]+"/"+bytestr[:2+2*self.level_size]+"/"+bytestr[:2+3*self.level_size]+"/"+bytestr+"/"
 
     def num_str8(self, i):
         num_str = str(i)
@@ -47,33 +46,36 @@ class Cross_Linker:
                 data = json.load(f)
                 tx = data[tx_id]
             if direction == "forward":
+                linked_dict = {}
                 print(json.dumps(data, indent=2))
             elif direction == "backward":
                 linked_dict = {}
-                for call in tx:
+                for call in tx["call_level_traces"]:
                     for taint in call["taints"]:
                         taint_info = taint.split(" | ")[0].split(" ")
                         serial_id = taint_info[0]
                         deps = [dep.split(" ") for dep in taint.split(" | ")[1:]]
-                        if taint_info[2] = "SLOAD": #find contract data is loaded from
+                        if taint_info[2] == "SLOAD":
                             for dep in deps:
-                                if dep[0] == "D" and dep[1] == "-6":
-                                    loc = taint.split("loc=")[1].split(" ")[0] #dont know where loc is in taint field this is wrong
-                                    storage_path = get_state_folder(loc)+"storage-write.log"
+                                if dep[1] == "-6":
+                                    loc = call["to"]
+                                    storage_path = self.get_state_folder(loc)+"storage-write.log"
                                     if os.path.exists(storage_path): #check sw.log of contract to find last trxn that writes to it
                                         f_sw = open(storage_path, "r")
-                                        store = f_sw.readline().split(" ")
+                                        store = f_sw.readline().strip().split(" ")
+                                        print(store)
                                         slot = store[0]
                                         last_block = store[1]
                                         last_trxn = store[2]
                                         linked_path = self.get_trace(last_block) #find trxn that wrote to contract last
                                         if os.path.exists(path):
                                             with open(path, "r") as f:
-                                                linled_data = json.load(f)
+                                                linked_data = json.load(f)
                                                 linked_tx = linked_data[int(last_trxn)]
                                             if loc in linked_tx["storage_written"]: #find taint id of writing trxn that wrote to slot in contract
                                                 if slot in linked_tx["storage_written"][loc]:
                                                     linked_dict[serial_id] = [int(last_block), int(last_trxn), linked_tx["storage_written"][loc][slot]]
+            return linked_dict
 
 
 
@@ -81,4 +83,4 @@ class Cross_Linker:
 
 if __name__ == "__main__":
     CL = Cross_Linker("State_DB/", "traces/", 2)
-    CL.link(12345678, 0, "backward")
+    print(CL.link(12345701, 0, "backward"))
