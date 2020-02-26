@@ -75,6 +75,7 @@ class Cross_Linker:
                                             if loc in linked_tx["storage_written"]: #find taint id of writing trxn that wrote to slot in contract
                                                 if slot in linked_tx["storage_written"][loc]:
                                                     linked_dict[serial_id] = [int(last_block), int(last_trxn), linked_tx["storage_written"][loc][slot]]
+                                    break
             return linked_dict
 
 
@@ -83,4 +84,4 @@ class Cross_Linker:
 
 if __name__ == "__main__":
     CL = Cross_Linker("State_DB/", "traces/", 2)
-    print(CL.link(12345701, 0, "backward"))
+    print(CL.link(12345702, 0, "backward"))

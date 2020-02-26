@@ -5,7 +5,7 @@ import shutil
 import random
 
 null = None
-output_options = ["SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
+output_options = ["SSTORE", "SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
 contract1 = ["0xabcd", "0xabde", "0xaede", "0xa13e", "0xa13e", "0xa13e"]
 contract2 = [hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:] for i in range(6)]
 for i in range(3):
@@ -43,7 +43,10 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
     else:
         call["value"] = 0
         call["data"] = "0x"
-    call["taints"] = []
+    taints =  []
+    if random.randint(0,10) > 3:
+        taints.append(str(i)+" 42 SLOAD 0x | I 1 loc | D -6 data")
+    call["taints"] = taints
     if not call["success"]:
         call["outputs"] = []
     elif call_code in ["CREATE", "CREATE2"]:
