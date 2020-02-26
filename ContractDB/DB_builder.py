@@ -61,7 +61,7 @@ class DB_Builder:
                         call_id = str(call["call_id"])
                         if (call["call_type"] == "CREATE" or call["call_type"] == "CREATE2") and call["success"]:
                             bytestr = call["outputs"][-1]
-                            contract_folder = self.get_folder(bytestr.split("data=0x", 1)[1])
+                            contract_folder = self.get_folder(bytestr.split("data=", 1)[1])
                             f_meta = open(contract_folder+"/metadata.log", "a")
                             f_meta.write(bytestr + " " + block_number + " " + trxn_id + " " + call_id + "\n")
                             f_meta.close()

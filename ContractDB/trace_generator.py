@@ -12,6 +12,10 @@ for i in range(3):
     contract2.append(contract2[0])
     contract2.append(contract2[1])
 
+def num_str8(i):
+    num_str = str(i)
+    return "0"*(8-len(num_str))+num_str
+
 def rand_trxn():
     return hex(random.randint(268435456, 4294967295))+hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:]
 
@@ -112,10 +116,10 @@ def gen_traces(start, stop, trace_dir):
                             storage[parsed[2][4:]] = {parsed[3][5:]: parsed[1]}
             trxn["storage_written"] = storage
             trxns.append(trxn)
-        trace_folder = trace_dir+str(block)[:5]+"k/"
+        trace_folder = trace_dir+num_str8(block)[:5]+"k/"
         if not os.path.isdir(trace_folder):
             os.mkdir(trace_folder)
-        with open(trace_folder+str(block)+".json", "w") as f:
+        with open(trace_folder+num_str8(block)+".json", "w") as f:
             f.write(json.dumps(trxns, indent=2))
 
 if __name__ == "__main__":
