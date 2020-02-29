@@ -148,7 +148,10 @@ class TransactionLevelTrace:
 def parse_file(file_name):
     with open(file_name, "r") as f:
         data = json.load(f)
-
+        print(data)
+        for tx in data:
+            print(tx)
+            print("Ok")
     transactions=[TransactionLevelTrace(tx) for tx in data]
     return transactions
 
