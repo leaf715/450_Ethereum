@@ -5,7 +5,7 @@ import shutil
 import random
 
 null = None
-output_options = ["SSTORE", "SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
+output_options = ["SSTORE", "SSTORE", "SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
 contract1 = ["0xabcd", "0xabde", "0xaede", "0xa13e", "0xa13e", "0xa13e"]
 contract2 = [hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:] for i in range(6)]
 for i in range(3):
@@ -43,9 +43,9 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
     else:
         call["value"] = 0
         call["data"] = "0x"
-    taints =  []
-    if random.randint(0,10) > 3:
-        taints.append(str(i)+" 42 SLOAD 0x | I 1 loc | D -6 data")
+    taints =  ["0 42 _PUSHED 0x | D -1 x"]
+    for i in range(random.randint(0,3)):
+        taints.append(str(i+1)+" 42 SLOAD 0x | I 0 loc | D -6 data")
     call["taints"] = taints
     if not call["success"]:
         call["outputs"] = []
@@ -55,7 +55,7 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
     else:
         outputs = []
         output_line = ""
-        for i in range(random.randint(0,3)):
+        for i in range(random.randint(0,4)):
             output_code = random.choice(output_options)
             output_line = output_code
             if output_code == "SELFDESTRUCT":
@@ -73,7 +73,7 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
                 outputs.append(output_line)
                 new_call.append(["CALLCODE", call["to"], call_id, to_addr])
             if output_code == "SSTORE":
-                output_line = "SSTORE " + str(random.randint(0,3)) + " loc=" + call["to"] + " data=" + rand_bytestring()
+                output_line = "SSTORE " + str(i) + " loc=" + call["to"] + " data=" + rand_bytestring()
                 outputs.append(output_line)
         call["outputs"] = outputs
 
@@ -113,10 +113,10 @@ def gen_traces(start, stop, trace_dir):
                     if parsed[0] == "SSTORE":
                         if parsed[2][4:] in storage:
                             dict = storage[parsed[2][4:]]
-                            dict[parsed[3][5:]] = parsed[1]
+                            dict[parsed[3][5:]] = int(parsed[1])
                             storage[parsed[2][4:]] = dict
                         else:
-                            storage[parsed[2][4:]] = {parsed[3][5:]: parsed[1]}
+                            storage[parsed[2][4:]] = {parsed[3][5:]: int(parsed[1])}
             trxn["storage_written"] = storage
             trxns.append(trxn)
         trace_folder = trace_dir+num_str8(block)[:5]+"k/"

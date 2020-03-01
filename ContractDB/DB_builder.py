@@ -63,7 +63,7 @@ class DB_Builder:
                             bytestr = call["outputs"][-1]
                             contract_folder = self.get_folder(bytestr.split("data=", 1)[1])
                             f_meta = open(contract_folder+"/metadata.log", "a")
-                            f_meta.write(bytestr + " " + block_number + " " + trxn_id + " " + call_id + "\n")
+                            f_meta.write(bytestr.split("data=", 1)[1] + " " + block_number + " " + trxn_id + " " + call_id + "\n")
                             f_meta.close()
                         output_opcodes = [code.split(" ", 1)[0] for code in call["outputs"]]
                         if "SELFDESTRUCT" in output_opcodes and call["success"]:
