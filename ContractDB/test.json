@@ -1,0 +1,417 @@
+[
+  {
+    "__class__": "<class 'parser_dest.TransactionLevelTrace'>",
+    "block_number": 12345678,
+    "tx_index": 0,
+    "tx_hash": {
+      "__class__": "<class 'bytes'>",
+      "hex()": "deadbeafdead0008deadcafedead0010deadbeafdead0018deadcafedead0020"
+    },
+    "gas_price": 1234567890,
+    "origin": {
+      "__class__": "<class 'bytes'>",
+      "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
+    },
+    "storage_written": {
+      "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": {
+        "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": 1
+      }
+    },
+    "call_level_traces": [
+      {
+        "__class__": "<class 'parser_dest.CallLevelTrace'>",
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": [],
+        "from_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
+        },
+        "to_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+        },
+        "code_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+        },
+        "value": 123456789012345678,
+        "data": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "1234567890abcdef"
+        },
+        "path": [],
+        "outputs": [
+          {
+            "__class__": "<class 'parser_dest.Output'>",
+            "name": "SSTORE",
+            "trigger_id": 1,
+            "parameters": {
+              "loc": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+              },
+              "data": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+              }
+            }
+          },
+          {
+            "__class__": "<class 'parser_dest.Output'>",
+            "name": "CALLCODE",
+            "trigger_id": 3,
+            "parameters": {
+              "gas": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "00"
+              },
+              "to": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+              },
+              "value": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "00"
+              },
+              "data": {
+                "__class__": "<class 'bytes'>",
+                "hex()": ""
+              },
+              "status": {
+                "__class__": "<class 'bytes'>",
+                "hex()": "00"
+              },
+              "returndata": {
+                "__class__": "<class 'bytes'>",
+                "hex()": ""
+              }
+            }
+          }
+        ],
+        "taints": [
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 0,
+            "pc": 42,
+            "name": "_PUSHED",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": -1,
+                "name": "x",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                -1
+              ]
+            },
+            "destination_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                1,
+                2,
+                3
+              ]
+            }
+          },
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 1,
+            "pc": 43,
+            "name": "SSTORE",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": ""
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 0,
+                "name": "loc",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 0,
+                "name": "data",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                0
+              ]
+            },
+            "destination_ids": []
+          },
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 2,
+            "pc": 45,
+            "name": "MLOAD",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "00"
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "I",
+                "source_id": 0,
+                "name": "_offset",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": null,
+                "name": "data",
+                "offset": 0,
+                "source_offset": null,
+                "length": 32
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                0,
+                null
+              ]
+            },
+            "destination_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                3
+              ]
+            }
+          },
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 3,
+            "pc": 46,
+            "name": "CALLCODE",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": ""
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 2,
+                "name": "gas",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 0,
+                "name": "to",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 2,
+                "name": "value",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "I",
+                "source_id": 2,
+                "name": "_inoff",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "I",
+                "source_id": 2,
+                "name": "_inlen",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "I",
+                "source_id": 0,
+                "name": "_outoff",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              },
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "I",
+                "source_id": 2,
+                "name": "_outlen",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                0,
+                2
+              ]
+            },
+            "destination_ids": []
+          },
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 6,
+            "pc": null,
+            "name": "I_AM_FAKE",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "deadbeef"
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "C",
+                "source_id": -7,
+                "name": "fake",
+                "offset": null,
+                "source_offset": 78187493520,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                -7
+              ]
+            },
+            "destination_ids": []
+          }
+        ]
+      },
+      {
+        "__class__": "<class 'parser_dest.CallLevelTrace'>",
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALLCODE",
+        "call_id": 1,
+        "call_tree_path": [
+          0
+        ],
+        "from_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+        },
+        "to_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+        },
+        "code_address": {
+          "__class__": "<class 'bytes'>",
+          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+        },
+        "value": 0,
+        "data": {
+          "__class__": "<class 'bytes'>",
+          "hex()": ""
+        },
+        "path": [
+          0,
+          12,
+          34,
+          56
+        ],
+        "outputs": [],
+        "taints": [
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 4,
+            "pc": 0,
+            "name": "CALLVALUE",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "00"
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": 2,
+                "name": "x",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                2
+              ]
+            },
+            "destination_ids": []
+          },
+          {
+            "__class__": "<class 'parser_dest.Taint'>",
+            "serial_id": 5,
+            "pc": 2,
+            "name": "ORIGIN",
+            "value": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
+            },
+            "dependencies": [
+              {
+                "__class__": "<class 'parser_dest.Dependency'>",
+                "type": "D",
+                "source_id": -2,
+                "name": "x",
+                "offset": null,
+                "source_offset": null,
+                "length": null
+              }
+            ],
+            "source_ids": {
+              "__class__": "<class 'set'>",
+              "": [
+                -2
+              ]
+            },
+            "destination_ids": []
+          }
+        ]
+      }
+    ]
+  }
+]
