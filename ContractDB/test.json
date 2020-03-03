@@ -1,1134 +1,3 @@
-[
-  {
-    "__class__": "<class 'parser_dest.TransactionLevelTrace'>",
-    "block_number": 12345679,
-    "tx_index": 0,
-    "tx_hash": {
-      "__class__": "<class 'bytes'>",
-      "hex()": "deadbeafdead0008deadcafedead0010deadbeafdead0018deadcafedead0020"
-    },
-    "gas_price": 1234567890,
-    "origin": {
-      "__class__": "<class 'bytes'>",
-      "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
-    },
-    "storage_written": {
-      "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": {
-        "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": 1
-      }
-    },
-    "call_level_traces": [
-      {
-        "__class__": "<class 'parser_dest.CallLevelTrace'>",
-        "success": true,
-        "error_message": null,
-        "call_type": "CALL",
-        "call_id": 0,
-        "call_tree_path": [],
-        "from_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
-        },
-        "to_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "code_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "value": 123456789012345678,
-        "data": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "1234567890abcdef"
-        },
-        "path": [],
-        "outputs": [
-          {
-            "__class__": "<class 'parser_dest.Output'>",
-            "name": "SSTORE",
-            "trigger_id": 14,
-            "parameters": {
-              "loc": {
-                "__class__": "<class 'bytes'>",
-                "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-              },
-              "data": {
-                "__class__": "<class 'bytes'>",
-                "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-              }
-            }
-          }
-        ],
-        "taints": [
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 3,
-            "pc": 11,
-            "name": "E",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "I",
-                "source_id": 0,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                0
-              ]
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                4
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                5
-              ]
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 4,
-            "pc": 12,
-            "name": "En",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 3,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                3
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 5,
-            "pc": 13,
-            "name": "A",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "I",
-                "source_id": 3,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 1,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                1
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                3
-              ]
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                13,
-                6
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 6,
-            "pc": 14,
-            "name": "An",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 5,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                5
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 7,
-            "pc": 15,
-            "name": "X",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 2,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                2
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                8,
-                9,
-                13,
-                14,
-                17
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                15
-              ]
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 8,
-            "pc": 16,
-            "name": "Xn",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 7,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                13
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 9,
-            "pc": 17,
-            "name": "Xm",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 7,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                13
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 10,
-            "pc": 18,
-            "name": "B",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": -5,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                -5
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                11,
-                12,
-                15
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                13
-              ]
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 11,
-            "pc": 19,
-            "name": "Bn",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 10,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                10
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                15
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 12,
-            "pc": 20,
-            "name": "Bm",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 10,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                10
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                15
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 13,
-            "pc": 21,
-            "name": "C",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 5,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 7,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "I",
-                "source_id": 10,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 8,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 9,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                8,
-                9,
-                5,
-                7
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                10
-              ]
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                14
-              ]
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 14,
-            "pc": 22,
-            "name": "SSTORE",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "I",
-                "source_id": 13,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 7,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                13
-              ]
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 15,
-            "pc": 23,
-            "name": "D",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 11,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 12,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "I",
-                "source_id": 7,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              },
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 10,
-                "name": "data",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                10,
-                11,
-                12
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                16,
-                18
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 16,
-            "pc": 24,
-            "name": "Dn",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 15,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                15
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          }
-        ]
-      },
-      {
-        "__class__": "<class 'parser_dest.CallLevelTrace'>",
-        "success": false,
-        "error_message": "unknown error",
-        "call_type": "CALLCODE",
-        "call_id": 1,
-        "call_tree_path": [
-          0
-        ],
-        "from_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "to_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "code_address": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "value": 0,
-        "data": {
-          "__class__": "<class 'bytes'>",
-          "hex()": ""
-        },
-        "path": [
-          0,
-          12,
-          34,
-          56
-        ],
-        "outputs": [],
-        "taints": [
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 0,
-            "pc": 0,
-            "name": "CALLVALUE",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": "00"
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": -2,
-                "name": "x",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                -2
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                3
-              ]
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 1,
-            "pc": 2,
-            "name": "ORIGIN",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": -2,
-                "name": "x",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                -2
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                5
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 2,
-            "pc": 3,
-            "name": "CALLVALUE",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": "00"
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": -2,
-                "name": "x",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                -2
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 17,
-            "pc": 4,
-            "name": "Xout",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 7,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                7
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          },
-          {
-            "__class__": "<class 'parser_dest.Taint'>",
-            "serial_id": 18,
-            "pc": 5,
-            "name": "Dout",
-            "value": {
-              "__class__": "<class 'bytes'>",
-              "hex()": ""
-            },
-            "dependencies": [
-              {
-                "__class__": "<class 'parser_dest.Dependency'>",
-                "type": "D",
-                "source_id": 15,
-                "name": "loc",
-                "offset": null,
-                "source_offset": null,
-                "length": null
-              }
-            ],
-            "Dsource_ids": {
-              "__class__": "<class 'set'>",
-              "": [
-                15
-              ]
-            },
-            "Isource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Csource_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Ddestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Idestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            },
-            "Cdestination_ids": {
-              "__class__": "<class 'set'>",
-              "": []
-            }
-          }
-        ]
-      }
-    ]
-  }
-]
 left outside source
 A
 left outside source
@@ -1143,28 +12,42 @@ right source of output
 X
 right outside dest
 D
-Direct Edge X to C
-Identical Edge X to X
-Indirect Edge X to D
+taints tracked
+A
+X
+B
+D
+C
+Indirect Edge B to C
+Direct Edge B to D
 extension lhs
 E
 Indirect Edge E to A
 Direct Edge A to C
-Indirect Edge B to C
-Direct Edge B to D
+Direct Edge X to C
+Indirect Edge X to D
+Identical Edge X to X
 extension rhs
 SSTORE
 Indirect Edge C to SSTORE
 extension rhs
 SSTORE
 Direct Edge X to SSTORE
-{3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 0: 1, 1: 1, 2: 1, 17: 1, 18: 1}
+tracked taints
+A
+X
+B
+D
+SSTORE
+C
+E
+{3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 19: 0, 0: 1, 1: 1, 2: 1, 17: 1, 18: 1, 20: 1}
 left
-['X', 'A', 'B']
+['B', 'A', 'X']
 right
-['C', 'X', 'D']
+['C', 'D', 'X']
 extensions
-['SSTORE', 'E']
+['E', 'SSTORE']
 {
   "__class__": "<class 'parser_dest.CallLevelTrace'>",
   "success": true,
@@ -1228,41 +111,6 @@ extensions
     },
     {
       "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 15,
-      "pc": 23,
-      "name": "D",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 10,
-          "name": ""
-        },
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 7,
-          "name": ""
-        }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 10,
-      "pc": 18,
-      "name": "B",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": []
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
       "serial_id": 7,
       "pc": 15,
       "name": "X",
@@ -1281,6 +129,48 @@ extensions
     },
     {
       "__class__": "<class '__main__.GreyTaint'>",
+      "serial_id": 10,
+      "pc": 18,
+      "name": "B",
+      "value": {
+        "__class__": "<class 'bytes'>",
+        "hex()": ""
+      },
+      "dependencies": [
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "D",
+          "source_id": -5,
+          "name": ""
+        }
+      ]
+    },
+    {
+      "__class__": "<class '__main__.GreyTaint'>",
+      "serial_id": 15,
+      "pc": 23,
+      "name": "D",
+      "value": {
+        "__class__": "<class 'bytes'>",
+        "hex()": ""
+      },
+      "dependencies": [
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "I",
+          "source_id": 7,
+          "name": ""
+        },
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "D",
+          "source_id": 10,
+          "name": ""
+        }
+      ]
+    },
+    {
+      "__class__": "<class '__main__.GreyTaint'>",
       "serial_id": 14,
       "pc": 22,
       "name": "SSTORE",
@@ -1291,6 +181,36 @@ extensions
       "dependencies": [
         {
           "__class__": "<class '__main__.GreyDependency'>",
+          "type": "I",
+          "source_id": 13,
+          "name": ""
+        },
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "D",
+          "source_id": 7,
+          "name": ""
+        }
+      ]
+    },
+    {
+      "__class__": "<class '__main__.GreyTaint'>",
+      "serial_id": 13,
+      "pc": 21,
+      "name": "C",
+      "value": {
+        "__class__": "<class 'bytes'>",
+        "hex()": ""
+      },
+      "dependencies": [
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "D",
+          "source_id": 5,
+          "name": ""
+        },
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
           "type": "D",
           "source_id": 7,
           "name": ""
@@ -1298,7 +218,7 @@ extensions
         {
           "__class__": "<class '__main__.GreyDependency'>",
           "type": "I",
-          "source_id": 13,
+          "source_id": 10,
           "name": ""
         }
       ]

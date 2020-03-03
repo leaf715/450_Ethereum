@@ -4,6 +4,7 @@ import glob
 import shutil
 from parser_dest import Dependency, Taint, Output, CallLevelTrace, TransactionLevelTrace, parse_file
 from struct_dump import _pprint
+from visualization import Graph
 
 blockinfo = set([-2, -3, -4, -5])
 
@@ -39,7 +40,7 @@ class Transformer:
 
     def __init__(self, trace_dir, trace):
         self.DFG = parse_file(self.get_trace(trace_dir, self.num_str8(trace)))
-        _pprint(self.DFG)
+        # _pprint(self.DFG)
 
     def graybox_call(self, tx_id, call_id):
         call_trace_dict = {}
@@ -67,6 +68,10 @@ class Transformer:
                 if id in blockinfo:
                     print("left blockinfo")
                     print(taint.name)
+                    if id in greydependencies:
+                        greydependencies[taint.serial_id].add(GreyDependency("D", id))
+                    else:
+                        greydependencies[taint.serial_id] = set([GreyDependency("D", id)])
                     lhset.add(taint)
                     greytaints.add(taint)
                 if id in call_trace_dict:
@@ -87,6 +92,10 @@ class Transformer:
                     print("right source of output")
                     print(taint_dict[id].name)
                     rhset.add(taint_dict[id])
+                    greytaints.add(taint_dict[id])
+        print("taints tracked")
+        for taint in greytaints:
+            print(taint.name)
         for ltaint in lhset:
             # lhs extensions
             for source_id in ltaint.Dsource_ids:
@@ -170,7 +179,9 @@ class Transformer:
                     else:
                         greydependencies[id] = set([GreyDependency("C", rtaint.serial_id)])
         finaltaints = []
+        print("tracked taints")
         for taint in greytaints:
+            print(taint.name)
             if taint.serial_id in greydependencies:
                 finaltaints.append(GreyTaint(taint, list(greydependencies[taint.serial_id])))
             else:
@@ -190,4 +201,7 @@ class Transformer:
 
 if __name__ == "__main__":
     trs = Transformer("traces/", 12345679)
-    _pprint(trs.graybox_call(0, 0))
+    call = trs.graybox_call(0, 0)
+    _pprint(call)
+    graph = Graph([call])
+    graph.render("%s_%d.gv" % (12345679, 0))
