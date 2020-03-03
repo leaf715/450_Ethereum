@@ -83,8 +83,12 @@ class Taint:
         self.name=T[2]
         self.value=parse_bytes(T[3])
         self.dependencies=[Dependency(r) for r in R[1:]]
-        self.source_ids = set([d.source_id for d in self.dependencies])
-        self.destination_ids = []
+        self.Dsource_ids = set([d.source_id for d in self.dependencies if d.type == 'D'])
+        self.Isource_ids = set([d.source_id for d in self.dependencies if d.type == 'I'])
+        self.Csource_ids = set([d.source_id for d in self.dependencies if d.type == 'C'])
+        self.Ddestination_ids = set()
+        self.Idestination_ids = set()
+        self.Cdestination_ids = set()
 
 
 
@@ -130,19 +134,7 @@ class CallLevelTrace:
                 self.path.append(parse_int(i))
         self.outputs = [Output(out) for out in ct["outputs"]]
         self.taints = [Taint(taint) for taint in ct["taints"]]
-        destinations = {}
-        for t in self.taints:
-            for source_id in t.source_ids:
-                for t2 in self.taints:
-                    if t2.serial_id == source_id:
-                        if t2.serial_id in destinations:
-                            destinations[t2.serial_id].append(t.serial_id)
-                        else:
-                            destinations[t2.serial_id] = [t.serial_id]
-                        break
-        for t in self.taints:
-            if t.serial_id in destinations:
-                t.destination_ids = set(destinations[t.serial_id])
+
 
 
 class TransactionLevelTrace:
@@ -157,6 +149,50 @@ class TransactionLevelTrace:
         self.origin= parse_bytes(tx["origin"])
         self.storage_written=parse_dict(tx["storage_written"])
         self.call_level_traces = [CallLevelTrace(ct) for ct in tx["call_level_traces"]]
+        Ddestinations = {}
+        Idestinations = {}
+        Cdestinations = {}
+        call_trace_dict = {}
+        for call in self.call_level_traces:
+            Ddestinations[call.call_id] = {}
+            Idestinations[call.call_id] = {}
+            Cdestinations[call.call_id] = {}
+            for taint in call.taints:
+                call_trace_dict[taint.serial_id] = call.call_id
+
+        for call in self.call_level_traces:
+            for t in call.taints:
+                for source_id in t.Dsource_ids:
+                    if source_id in call_trace_dict:
+                        call_id = call_trace_dict[source_id]
+                        if source_id in Ddestinations[call_id]:
+                            Ddestinations[call_id][source_id].append(t.serial_id)
+                        else:
+                            Ddestinations[call_id][source_id] = [t.serial_id]
+                for source_id in t.Isource_ids:
+                    for source_id in t.Isource_ids:
+                        if source_id in call_trace_dict:
+                            call_id = call_trace_dict[source_id]
+                            if source_id in Idestinations[call_id]:
+                                Idestinations[call_id][source_id].append(t.serial_id)
+                            else:
+                                Idestinations[call_id][source_id] = [t.serial_id]
+                for source_id in t.Csource_ids:
+                    for source_id in t.Csource_ids:
+                        if source_id in call_trace_dict:
+                            call_id = call_trace_dict[source_id]
+                            if source_id in Cdestinations[call_id]:
+                                Cdestinations[call_id][source_id].append(t.serial_id)
+                            else:
+                                Cdestinations[call_id][source_id] = [t.serial_id]
+        for call in self.call_level_traces:
+            for t in call.taints:
+                if t.serial_id in Ddestinations[call.call_id]:
+                    t.Ddestination_ids = set(Ddestinations[call.call_id][t.serial_id])
+                if t.serial_id in Idestinations[call.call_id]:
+                    t.Idestination_ids = set(Idestinations[call.call_id][t.serial_id])
+                if t.serial_id in Cdestinations[call.call_id]:
+                    t.Cdestination_ids = set(Cdestinations[call.call_id][t.serial_id])
 
 
 def parse_file(file_name):
