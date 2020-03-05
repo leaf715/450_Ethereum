@@ -13,20 +13,20 @@ X
 right outside dest
 D
 taints tracked
-A
 X
 B
 D
+A
 C
-Indirect Edge B to C
-Direct Edge B to D
+Direct Edge X to C
+Indirect Edge X to D
+Identical Edge X to X
 extension lhs
 E
 Indirect Edge E to A
 Direct Edge A to C
-Direct Edge X to C
-Indirect Edge X to D
-Identical Edge X to X
+Indirect Edge B to C
+Direct Edge B to D
 extension rhs
 SSTORE
 Indirect Edge C to SSTORE
@@ -34,16 +34,16 @@ extension rhs
 SSTORE
 Direct Edge X to SSTORE
 tracked taints
-A
 X
 B
 D
 SSTORE
+A
 C
 E
 {3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 19: 0, 0: 1, 1: 1, 2: 1, 17: 1, 18: 1, 20: 1}
 left
-['B', 'A', 'X']
+['X', 'A', 'B']
 right
 ['C', 'D', 'X']
 extensions
@@ -91,24 +91,6 @@ extensions
     }
   ],
   "taints": [
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 5,
-      "pc": 13,
-      "name": "A",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 3,
-          "name": ""
-        }
-      ]
-    },
     {
       "__class__": "<class '__main__.GreyTaint'>",
       "serial_id": 7,
@@ -181,14 +163,32 @@ extensions
       "dependencies": [
         {
           "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 13,
+          "type": "D",
+          "source_id": 7,
           "name": ""
         },
         {
           "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 7,
+          "type": "I",
+          "source_id": 13,
+          "name": ""
+        }
+      ]
+    },
+    {
+      "__class__": "<class '__main__.GreyTaint'>",
+      "serial_id": 5,
+      "pc": 13,
+      "name": "A",
+      "value": {
+        "__class__": "<class 'bytes'>",
+        "hex()": ""
+      },
+      "dependencies": [
+        {
+          "__class__": "<class '__main__.GreyDependency'>",
+          "type": "I",
+          "source_id": 3,
           "name": ""
         }
       ]
@@ -211,14 +211,14 @@ extensions
         },
         {
           "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 7,
+          "type": "I",
+          "source_id": 10,
           "name": ""
         },
         {
           "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 10,
+          "type": "D",
+          "source_id": 7,
           "name": ""
         }
       ]

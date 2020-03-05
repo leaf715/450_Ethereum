@@ -42,7 +42,7 @@ class Transformer:
         self.DFG = parse_file(self.get_trace(trace_dir, self.num_str8(trace)))
         # _pprint(self.DFG)
 
-    def graybox_call(self, tx_id, call_id):
+    def greybox_call(self, tx_id, call_id):
         call_trace_dict = {}
         taint_dict = {}
         outputset = set()
@@ -196,12 +196,17 @@ class Transformer:
         print([t.name for t in greytaints-lhset-rhset])
         return call
 
-    def graybox_trxn(self):
-        pass
+    def graybox_trxn(self, tx_id):
+        tx = self.DFG[tx_id]
+        newcalls = []
+        for call in tx.call_level_traces:
+            newcalls.append(self.greybox_call(tx_id, call.call_id))
+        tx.call_level_traces = newcalls
+        return tx
 
 if __name__ == "__main__":
     trs = Transformer("traces/", 12345679)
-    call = trs.graybox_call(0, 0)
+    call = trs.greybox_call(0, 0)
     _pprint(call)
     graph = Graph([call])
     graph.render("%s_%d.gv" % (12345679, 0))
