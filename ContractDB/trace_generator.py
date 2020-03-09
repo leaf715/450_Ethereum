@@ -44,7 +44,9 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
         call["value"] = 0
         call["data"] = "0x"
     taints =  ["0 42 _PUSHED 0x | D -1 x"]
+    taintcount = 1
     for i in range(random.randint(0,3)):
+        taintcount+=1
         taints.append(str(i+1)+" 42 SLOAD 0x | I 0 loc | D -6 data")
     call["taints"] = taints
     if not call["success"]:
@@ -64,17 +66,24 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
                 break
             if output_code == "CALL":
                 to_addr = rand_bytestring()
-                output_line = "CALL "+str(i)+" gas=0x0 to="+to_addr
+                output_line = "CALL "+ str(taintcount) +" gas=0x0 to="+to_addr
                 outputs.append(output_line)
+                taints.append(str(taintcount)  + " 43 CALL 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taintcount+=1
                 new_call.append(["CALL", call["to"], call_id, to_addr])
             if output_code == "CALLCODE":
                 to_addr = rand_bytestring()
-                output_line = "CALLCODE "+str(i)+" gas=0x0 to="+to_addr
+                output_line = "CALLCODE "+ str(taintcount) +" gas=0x0 to="+to_addr
                 outputs.append(output_line)
+                taints.append(str(taintcount)  + " 43 CALLCODE 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taintcount+=1
                 new_call.append(["CALLCODE", call["to"], call_id, to_addr])
             if output_code == "SSTORE":
-                output_line = "SSTORE " + str(i) + " loc=" + call["to"] + " data=" + rand_bytestring()
+                output_line = "SSTORE " + str(taintcount) + " loc=" + call["to"] + " data=" + rand_bytestring()
+                taints.append(str(taintcount)  + " 43 SSTORE 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taintcount+=1
                 outputs.append(output_line)
+        call["taints"] = taints
         call["outputs"] = outputs
 
     return call, new_call
