@@ -43,6 +43,7 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
     else:
         call["value"] = 0
         call["data"] = "0x"
+    call["path"] = ""
     taints =  ["0 42 _PUSHED 0x | D -1 x"]
     taintcount = 1
     for i in range(random.randint(0,3)):
