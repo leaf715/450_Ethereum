@@ -6,7 +6,7 @@ from parser_dest import Dependency, Taint, Output, CallLevelTrace, TransactionLe
 from struct_dump import _pprint
 from visualization import Graph
 
-blockinfo = set([-2, -3, -4, -5])
+blockinfo = set([-5])
 
 class GreyDependency:
     def __init__(self, type, source, name = None):
@@ -23,12 +23,12 @@ class GreyTaint:
         self.name=taint.name
         self.value=taint.value
         self.dependencies=greydeps
-        # self.Dsource_ids = taint.Dsource_ids
-        # self.Isource_ids = taint.Isource_ids
-        # self.Csource_ids = taint.Csource_ids
-        # self.Ddestination_ids = taint.Ddestination_ids
-        # self.Idestination_ids = taint.Idestination_ids
-        # self.Cdestination_ids = taint.Cdestination_ids
+        self.Dsource_ids = taint.Dsource_ids
+        self.Isource_ids = taint.Isource_ids
+        self.Csource_ids = taint.Csource_ids
+        self.Ddestination_ids = taint.Ddestination_ids
+        self.Idestination_ids = taint.Idestination_ids
+        self.Cdestination_ids = taint.Cdestination_ids
 
 class Transformer:
     def get_trace(self, dir, i):
@@ -43,6 +43,7 @@ class Transformer:
         # _pprint(self.DFG)
 
     def greybox_call(self, tx_id, call_id):
+        print("greyboxing call")
         call_trace_dict = {}
         taint_dict = {}
         outputset = set()
@@ -56,6 +57,7 @@ class Transformer:
                 outputset.add(output.trigger_id)
 
         call = tx.call_level_traces[call_id]
+
         lhset = set()
         rhset = set()
         greytaints = set()
@@ -76,14 +78,19 @@ class Transformer:
                     greytaints.add(taint)
                 if id in call_trace_dict:
                     if call_trace_dict[id] != call.call_id:
-                        print("left outside source")
+                        print("left outside source " + str(id))
                         print(taint.name)
                         lhset.add(taint)
                         greytaints.add(taint)
+                elif id >= 0:
+                    print("left outside source - other trxn" + str(id))
+                    print(taint.name)
+                    lhset.add(taint)
+                    greytaints.add(taint)
             for id in taint.Ddestination_ids:
                 if id in call_trace_dict:
                     if call_trace_dict[id] != call.call_id:
-                        print("right outside dest")
+                        print("right outside dest " + str(id))
                         print(taint.name)
                         rhset.add(taint)
                         greytaints.add(taint)
@@ -196,17 +203,32 @@ class Transformer:
         print([t.name for t in greytaints-lhset-rhset])
         return call
 
-    def graybox_trxn(self, tx_id):
+    def greybox_trxn(self, tx_id):
         tx = self.DFG[tx_id]
         newcalls = []
         for call in tx.call_level_traces:
-            newcalls.append(self.greybox_call(tx_id, call.call_id))
-        tx.call_level_traces = newcalls
+            # newcalls.append(self.greybox_call(tx_id, call.call_id))
+            if call.call_tree_path == []:
+                rootcall = call
+                break
+        for call in tx.call_level_traces:
+            if call.call_id != rootcall.call_id:
+                rootcall.taints.extend(call.taints)
+        print("all taints")
+        for taint in rootcall.taints:
+            print(str(taint.serial_id) + " " + taint.name)
+        tx.call_level_traces = [rootcall]
+        tx.call_level_traces = [self.greybox_call(tx_id, rootcall.call_id)]
+
         return tx
 
 if __name__ == "__main__":
     trs = Transformer("traces/", 12345679)
-    call = trs.greybox_call(0, 0)
-    _pprint(call)
-    graph = Graph([call])
-    graph.render("%s_%d.gv" % (12345679, 0))
+    # call = trs.greybox_call(0, 0)
+    # _pprint(call)
+    # graph = Graph([call])
+    # graph.render("%s_%d.gv" % (12345679, 0))
+    trxn = trs.greybox_trxn(0)
+    _pprint(trxn)
+    graph = Graph(trxn.call_level_traces)
+    graph.render("%s_%d.gv" % (12345679, 111))

@@ -1,32 +1,51 @@
-left outside source
+all taints
+3 E
+4 En
+5 A
+6 An
+7 X
+8 Xn
+9 Xm
+10 B
+11 Bn
+12 Bm
+13 C
+14 SSTORE
+15 D
+16 Dn
+19 FAKE
+0 CALLVALUE
+1 ORIGIN
+2 CALLVALUE2
+17 Xout
+18 Dout
+20 FAKE2
+21 Bin
+greyboxing call
+left outside source - other trxn100
 A
-left outside source
-X
-right outside dest
-X
 left blockinfo
 B
 right source of output
 C
 right source of output
 X
-right outside dest
-D
+left blockinfo
+ORIGIN
 taints tracked
+C
+ORIGIN
+A
 X
 B
-D
-A
-C
-Direct Edge X to C
-Indirect Edge X to D
-Identical Edge X to X
+Indirect Edge B to C
+extension lhs
+ORIGIN
+Direct Edge ORIGIN to A
 extension lhs
 E
 Indirect Edge E to A
 Direct Edge A to C
-Indirect Edge B to C
-Direct Edge B to D
 extension rhs
 SSTORE
 Indirect Edge C to SSTORE
@@ -34,205 +53,432 @@ extension rhs
 SSTORE
 Direct Edge X to SSTORE
 tracked taints
+C
+ORIGIN
+A
 X
 B
-D
-SSTORE
-A
-C
 E
-{3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 19: 0, 0: 1, 1: 1, 2: 1, 17: 1, 18: 1, 20: 1}
+SSTORE
+{3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 19: 0, 0: 0, 1: 0, 2: 0, 17: 0, 18: 0, 20: 0, 21: 0}
 left
-['X', 'A', 'B']
+['ORIGIN', 'B', 'A']
 right
-['C', 'D', 'X']
+['C', 'X']
 extensions
 ['E', 'SSTORE']
 {
-  "__class__": "<class 'parser_dest.CallLevelTrace'>",
-  "success": true,
-  "error_message": null,
-  "call_type": "CALL",
-  "call_id": 0,
-  "call_tree_path": [],
-  "from_address": {
+  "__class__": "<class 'parser_dest.TransactionLevelTrace'>",
+  "block_number": 12345679,
+  "tx_index": 0,
+  "tx_hash": {
+    "__class__": "<class 'bytes'>",
+    "hex()": "deadbeafdead0008deadcafedead0010deadbeafdead0018deadcafedead0020"
+  },
+  "gas_price": 1234567890,
+  "origin": {
     "__class__": "<class 'bytes'>",
     "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
   },
-  "to_address": {
-    "__class__": "<class 'bytes'>",
-    "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-  },
-  "code_address": {
-    "__class__": "<class 'bytes'>",
-    "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-  },
-  "value": 123456789012345678,
-  "data": {
-    "__class__": "<class 'bytes'>",
-    "hex()": "1234567890abcdef"
-  },
-  "path": [],
-  "outputs": [
-    {
-      "__class__": "<class 'parser_dest.Output'>",
-      "name": "SSTORE",
-      "trigger_id": 14,
-      "parameters": {
-        "loc": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        },
-        "data": {
-          "__class__": "<class 'bytes'>",
-          "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
-        }
-      }
+  "storage_written": {
+    "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": {
+      "<class 'bytes'> deadbeafdead0008deadcafedead0010deadbabe": 1
     }
-  ],
-  "taints": [
+  },
+  "call_level_traces": [
     {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 7,
-      "pc": 15,
-      "name": "X",
-      "value": {
+      "__class__": "<class 'parser_dest.CallLevelTrace'>",
+      "success": true,
+      "error_message": null,
+      "call_type": "CALL",
+      "call_id": 0,
+      "call_tree_path": [],
+      "from_address": {
         "__class__": "<class 'bytes'>",
-        "hex()": ""
+        "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
       },
-      "dependencies": [
+      "to_address": {
+        "__class__": "<class 'bytes'>",
+        "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+      },
+      "code_address": {
+        "__class__": "<class 'bytes'>",
+        "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+      },
+      "value": 123456789012345678,
+      "data": {
+        "__class__": "<class 'bytes'>",
+        "hex()": "1234567890abcdef"
+      },
+      "path": [],
+      "outputs": [
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "Identical",
-          "source_id": 7,
-          "name": ""
+          "__class__": "<class 'parser_dest.Output'>",
+          "name": "SSTORE",
+          "trigger_id": 14,
+          "parameters": {
+            "loc": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+            },
+            "data": {
+              "__class__": "<class 'bytes'>",
+              "hex()": "deadbeafdead0008deadcafedead0010deadbabe"
+            }
+          }
         }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 10,
-      "pc": 18,
-      "name": "B",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
+      ],
+      "taints": [
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": -5,
-          "name": ""
-        }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 15,
-      "pc": 23,
-      "name": "D",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 7,
-          "name": ""
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 13,
+          "pc": 21,
+          "name": "C",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "D",
+              "source_id": 5,
+              "name": ""
+            },
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "I",
+              "source_id": 10,
+              "name": ""
+            }
+          ],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              8,
+              9,
+              5,
+              7
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              10
+            ]
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              14
+            ]
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
         },
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 10,
-          "name": ""
-        }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 14,
-      "pc": 22,
-      "name": "SSTORE",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 7,
-          "name": ""
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 1,
+          "pc": 2,
+          "name": "ORIGIN",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": "deadbeafdead0008deadcafedead0010deadbeaf"
+          },
+          "dependencies": [
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "D",
+              "source_id": -2,
+              "name": ""
+            }
+          ],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              -2
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              5
+            ]
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
         },
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 13,
-          "name": ""
-        }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 5,
-      "pc": 13,
-      "name": "A",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 3,
-          "name": ""
-        }
-      ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 13,
-      "pc": 21,
-      "name": "C",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": [
-        {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 5,
-          "name": ""
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 5,
+          "pc": 13,
+          "name": "A",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "I",
+              "source_id": 3,
+              "name": ""
+            },
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "D",
+              "source_id": 1,
+              "name": ""
+            }
+          ],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              1,
+              100
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              3
+            ]
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              13,
+              6
+            ]
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
         },
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "I",
-          "source_id": 10,
-          "name": ""
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 7,
+          "pc": 15,
+          "name": "X",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              2
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              8,
+              9,
+              13,
+              14,
+              17
+            ]
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              15
+            ]
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
         },
         {
-          "__class__": "<class '__main__.GreyDependency'>",
-          "type": "D",
-          "source_id": 7,
-          "name": ""
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 10,
+          "pc": 18,
+          "name": "B",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "D",
+              "source_id": -5,
+              "name": ""
+            }
+          ],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              -5
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              8
+            ]
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              11,
+              12,
+              15
+            ]
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              13
+            ]
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
+        },
+        {
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 3,
+          "pc": 11,
+          "name": "E",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              0
+            ]
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              4
+            ]
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              5
+            ]
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
+        },
+        {
+          "__class__": "<class '__main__.GreyTaint'>",
+          "serial_id": 14,
+          "pc": 22,
+          "name": "SSTORE",
+          "value": {
+            "__class__": "<class 'bytes'>",
+            "hex()": ""
+          },
+          "dependencies": [
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "I",
+              "source_id": 13,
+              "name": ""
+            },
+            {
+              "__class__": "<class '__main__.GreyDependency'>",
+              "type": "D",
+              "source_id": 7,
+              "name": ""
+            }
+          ],
+          "Dsource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              7
+            ]
+          },
+          "Isource_ids": {
+            "__class__": "<class 'set'>",
+            "": [
+              13
+            ]
+          },
+          "Csource_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Ddestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Idestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          },
+          "Cdestination_ids": {
+            "__class__": "<class 'set'>",
+            "": []
+          }
         }
       ]
-    },
-    {
-      "__class__": "<class '__main__.GreyTaint'>",
-      "serial_id": 3,
-      "pc": 11,
-      "name": "E",
-      "value": {
-        "__class__": "<class 'bytes'>",
-        "hex()": ""
-      },
-      "dependencies": []
     }
   ]
 }

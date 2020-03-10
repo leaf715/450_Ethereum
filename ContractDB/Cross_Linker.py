@@ -108,6 +108,7 @@ class Cross_Linker:
                                     call = calls[i].strip().split(" ")
                         linked_dict[serial_id] = linked_taints
                     contract_dict[loc] = linked_dict
+                return contract_dict
             elif direction == "backward":
                 # print("backwards")
                 linked_dict = {}
@@ -142,7 +143,7 @@ class Cross_Linker:
                                                     if slot in linked_tx["storage_written"][loc]:
                                                         linked_dict[serial_id] = [int(last_block), int(last_trxn), linked_tx["storage_written"][loc][slot]]
                                     break
-            return linked_dict
+                return linked_dict
 
 
 

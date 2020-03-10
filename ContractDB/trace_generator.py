@@ -33,7 +33,7 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
         call["error_message"] = "unknown error"
     call["call_type"] = call_code
     call["call_id"] = call_id
-    call["call_tree_path"] = caller_id
+    call["call_tree_path"] = str(caller_id)
     call["from"] = caller
     call["to"] = to_code
     call["code_addr"] = call["to"]
