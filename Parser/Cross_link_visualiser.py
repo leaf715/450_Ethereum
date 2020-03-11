@@ -4,9 +4,10 @@ import os
 os.environ["PATH"] += os.pathsep + 'C:\\Users\\khaak\\Anaconda3\\Library\\bin\\graphviz'
 
 class Node:
-    def __init__(self,node_id,name):
+    def __init__(self,node_id,name,pre):
         self.is_event = False
         self.serial_id = node_id ### primary key
+        self.pre_f=pre
         # self.event_id = None
         # self.call_nonce = call_nonce
         self.name = name
@@ -17,7 +18,7 @@ class Node:
     #     shortened_info = [s if len(s) <= 12 else "0x%s..%s" % (s[2:6], s[-4:]) for s in self.extra_info]
     #     return "_".join([self.name] + shortened_info)
     def display_id(self):
-        return "n%d" % self.serial_id
+        return ("%s%d" % (self.pre_f,self.serial_id))
 
 class Edge:
     def __init__(self, edge_type, src_node, dst_node, name,id):
@@ -43,18 +44,19 @@ class Edge:
             nod=str(node)
             return nod
 class Graph:
-    def __init__(self, tx_ct):
+    def __init__(self, tx_ct,pre):
         # self.tx_hash = tx.tx_hash
         # self.event_nodes_map = {} # event_id: int -> node: EventNode
         self.nodes_map = {} # node_id: int -> node: NormalNode
         self.edges_map = {} # edge_id: int -> edge: Edge
+        self.pre_f=pre
         self.build(tx_ct)
 
     def build(self, tx_ct):
         # register nodes (yet-to-connect):
         for ct in tx_ct:
             for taint in ct.taints:
-                node = Node(taint.serial_id,taint.name)
+                node = Node(taint.serial_id,taint.name,self.pre_f)
                 self.nodes_map[node.serial_id] = node
                 # register edges (connect nodes):
                 for dep in taint.dependencies:
@@ -93,17 +95,20 @@ class Graph:
     #     edge_labels = [edge.name for edge in edges]
     #     return nodes, edge_labels
 
-def test(file_name, ind):
+def test(file_name, ind,file_name1,ind1):
     from parser_1 import parse_file
     from struct_dump import _pprint
     assert file_name[-5:] == ".json"
+    assert file_name1[-5:] == ".json"
     trace = parse_file(file_name)
+    trace_1=parse_file(file_name1)
     print(trace)
     graphs = []
-
     tx = trace[ind]
-    print("length test",len(trace))
-    graph = Graph(tx.call_level_traces)
+    tx1=trace_1[ind1]
+    # print("length test",len(trace))
+    graph = Graph(tx.call_level_traces,"a")
+    graph1=Graph(tx1.call_level_traces,"b")
     # dot = Digraph(comment=tx.tx_hash)
     # dot.node("A","test")
     # dot.node("B", "test1")
@@ -112,11 +117,14 @@ def test(file_name, ind):
     # dot.edge("A","C","test22",style="dotted",color="red")
     # dot.render("test.gv")
     # graph = Graph(tx)
-    graph.render("%s_%d.gv" % (file_name[:-5], ind))
+    graph.render("%s.gv" % ("crosslinker"))
+
+    graph1.render("%s.gv" % ("crosslinker"))
     # graph.render("test.gv")
     graphs.append(graph)
+    graphs.append(graph1)
     print(graphs)
     _pprint(graphs)
 
 if __name__ == "__main__":
-    test("../ContractDB/traces/12345k/12345693.json",0)
+    test("../ContractDB/traces/12345k/12345695.json",0,"../ContractDB/traces/12345k/12345698.json",0)

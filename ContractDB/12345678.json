@@ -19,7 +19,7 @@
 "data": "0x1234567890abcdef",
 "path": "0 10 20 30 40 50 40 50 80 60",
 "taints": [
-"0 42 _PUSHED 0xdeadbeafdead0008deadcafedead0010deadbabe | D -4 x",
+"0 42 _PUSHED 0xdeadbeafdead0008deadcafedead0010deadbabe | D -1 x",
 "1 43 SSTORE 0x | D 0 loc | D 0 data",
 "2 45 MLOAD 0x0 | I 0 _offset | D null data 0x0 null 0x20",
 "3 46 CALLCODE 0x | D 2 gas | D 0 to | D 2 value | I 2 _inoff | I 2 _inlen | I 0 _outoff | I 2 _outlen",

@@ -2,13 +2,15 @@ import json
 import os
 import glob
 import shutil
+from Parser.test_cross_vis import test
+import math
 
 class Cross_Linker:
     def __init__(self, log_dir, trace_dir, level_size):
         if not os.path.isdir(log_dir):
-            error("no such log directory")
+            os.error("no such log directory")
         if not os.path.isdir(trace_dir):
-            error("no such trace directory")
+            os.error("no such trace directory")
         self.log_dir = log_dir
         self.trace_dir = trace_dir
         self.level_size = level_size
@@ -151,5 +153,7 @@ class Cross_Linker:
 
 if __name__ == "__main__":
     CL = Cross_Linker("State_DB/", "traces/", 2)
-    print(CL.link(12345701, 0, "backward"))
-    print(CL.link(12345678, 0, "forward"))
+    print(CL.link(12345699, 0, "backward"))
+    res=CL.link(12345699, 0, "backward")
+    print(CL.link(12345678 , 0, "forward"))
+    # test("../ContractDB/traces/12345k/12345699.json", 0,res)

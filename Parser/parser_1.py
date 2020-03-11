@@ -149,9 +149,9 @@ def parse_file(file_name):
     with open(file_name, "r") as f:
         data = json.load(f)
         print(data)
-        for tx in data:
-            print(tx)
-            print("Ok")
+        # for tx in data:
+            # print(tx)
+            # print("Ok")
     transactions=[TransactionLevelTrace(tx) for tx in data]
     return transactions
 
@@ -163,5 +163,5 @@ def test(file_name):
 
 
 if __name__ == "__main__":
-    test("./12345678.json")
+    test("../ContractDB/traces/12345k/12345693.json")
 
