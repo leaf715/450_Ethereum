@@ -79,4 +79,4 @@ def test(file_name, ind):
     _pprint(graphs)
 
 if __name__ == "__main__":
-    test("./12345678.json",0)
+    test("./12345679.json",0)

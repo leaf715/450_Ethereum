@@ -1,0 +1,72 @@
+[
+  {
+    "block_number": 12345679,
+    "tx_index": 0,
+    "tx_hash": "0xdeadbeafdead0008deadcafedead0010deadbeafdead0018deadcafedead0020",
+    "gas_price": 1234567890,
+    "origin": "0xdeadbeafdead0008deadcafedead0010deadbeaf",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xdeadbeafdead0008deadcafedead0010deadbeaf",
+        "to": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+        "code_addr": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+        "value": 123456789012345678,
+        "data": "0x1234567890abcdef",
+        "path": "0 10 20 30 40 50 40 50 80 60",
+        "taints": [
+          "3 11 E 0x | I 0 loc",
+          "4 12 En 0x | D 3 loc",
+          "5 13 A 0x | I 3 loc | D 1 data | D 100 loc",
+          "6 14 An 0x | D 5 loc",
+          "7 15 X 0x | D 2 data",
+          "8 16 Xn 0x | D 7 loc",
+          "9 17 Xm 0x | D 7 loc",
+          "10 18 B 0x | D -5 data | C 8 loc",
+          "11 19 Bn 0x | D 10 loc",
+          "12 20 Bm 0x | D 10 loc",
+          "13 21 C 0x | D 5 loc | D 7 loc | I 10 data | D 8 data | D 9 data",
+          "14 22 SSTORE 0x | I 13 loc | D 7 data",
+          "15 23 D 0x | D 11 loc | D 12 loc | I 7 data | D 10 data",
+          "16 24 Dn 0x | D 15 loc",
+          "19 25 FAKE 0x | I 18 loc | D -1 data"
+        ],
+        "outputs": [
+          "SSTORE 14 loc=0xdeadbeafdead0008deadcafedead0010deadbabe data=0xdeadbeafdead0008deadcafedead0010deadbabe"
+        ]
+      },
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALLCODE",
+        "call_id": 1,
+        "call_tree_path": "0",
+        "from": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+        "to": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+        "code_addr": "0xdeadbeafdead0008deadcafedead0010deadbabe",
+        "value": 0,
+        "data": "0x",
+        "path": "0 12 34 56",
+        "taints": [
+          "0 0 CALLVALUE 0x0 | D -1 x",
+          "1 2 ORIGIN 0xdeadbeafdead0008deadcafedead0010deadbeaf | D -5 x",
+          "2 3 CALLVALUE2 0x0 | D -1 x",
+          "17 4 Xout 0x | D 7 loc",
+          "18 5 Dout 0x | D 15 loc",
+          "20 6 FAKE2 0x | I 16 loc",
+          "21 7 Bin 0x | D 18 loc"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {
+      "0xdeadbeafdead0008deadcafedead0010deadbabe": {
+        "0xdeadbeafdead0008deadcafedead0010deadbabe": 1
+      }
+    }
+  }
+]
