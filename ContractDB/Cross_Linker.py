@@ -107,6 +107,8 @@ class Cross_Linker:
                                                         linked_taints.add((int(call[0]), int(call[1]), int(taint_serial_id)))
                                                         break
                                     i+=1
+                                    if i >= len(calls):
+                                        break
                                     call = calls[i].strip().split(" ")
                         linked_dict[serial_id] = linked_taints
                     contract_dict[loc] = linked_dict
