@@ -1,0 +1,30 @@
+[
+  {
+    "block_number": 12345975,
+    "tx_index": 0,
+    "tx_hash": "0x3e897b76ca15825563f60a174cf27caa",
+    "gas_price": 9580,
+    "origin": "0xabcd2285b69518f776dd",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabcd2285b69518f776dd",
+        "to": "0xacdfa0a6a35fb94329af",
+        "code_addr": "0xacdfa0a6a35fb94329af",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  }
+]

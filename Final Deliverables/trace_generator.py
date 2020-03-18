@@ -6,7 +6,7 @@ import random
 
 null = None
 output_options = ["SSTORE", "SSTORE", "SSTORE", "SSTORE", "SSTORE", "CALL", "CALLCODE", "SELFDESTRUCT"]
-contract1 = ["0xabcd", "0xabde", "0xaede", "0xa13e", "0xa13e", "0xa13e"]
+contract1 = ["0xabcd", "0xabde", "0xabef", "0xacbd", "0xacce", "0xacdf"]
 contract2 = [hex(random.randint(268435456, 4294967295))[2:]+hex(random.randint(268435456, 4294967295))[2:] for i in range(6)]
 for i in range(3):
     contract2.append(contract2[0])
@@ -22,7 +22,13 @@ def rand_trxn():
 def rand_bytestring():
     return random.choice(contract1) + random.choice(contract2)
 
-def create_call(call_id, call_code, caller, caller_id, to_code):
+def rand_link(taintcount):
+    return str(random.randint(0, taintcount-1))
+
+def rand_connection():
+    return random.choice(['D', 'I'])
+
+def create_call(call_id, call_code, caller, caller_id, to_code, taintcount):
     call = {}
     new_call = []
     success = random.randint(0,10) > 3
@@ -44,11 +50,11 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
         call["value"] = 0
         call["data"] = "0x"
     call["path"] = ""
-    taints =  ["0 42 _PUSHED 0x | D -1 x"]
-    taintcount = 1
+    taints =  [str(taintcount)+" 42 _PUSHED 0x | D -1 x"]
+    taintcount+=1
     for i in range(random.randint(0,3)):
+        taints.append(str(taintcount)+" 42 SLOAD 0x | " + rand_connection() + " "+rand_link(taintcount)+ " loc | D -6 data")
         taintcount+=1
-        taints.append(str(i+1)+" 42 SLOAD 0x | I 0 loc | D -6 data")
     call["taints"] = taints
     if not call["success"]:
         call["outputs"] = []
@@ -69,26 +75,27 @@ def create_call(call_id, call_code, caller, caller_id, to_code):
                 to_addr = rand_bytestring()
                 output_line = "CALL "+ str(taintcount) +" gas=0x0 to="+to_addr
                 outputs.append(output_line)
-                taints.append(str(taintcount)  + " 43 CALL 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taints.append(str(taintcount)  + " 43 CALL 0x | " + rand_connection() + " "+rand_link(taintcount)+ " loc | D "+rand_link(taintcount)+ " data")
                 taintcount+=1
                 new_call.append(["CALL", call["to"], call_id, to_addr])
             if output_code == "CALLCODE":
                 to_addr = rand_bytestring()
                 output_line = "CALLCODE "+ str(taintcount) +" gas=0x0 to="+to_addr
                 outputs.append(output_line)
-                taints.append(str(taintcount)  + " 43 CALLCODE 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taints.append(str(taintcount)  + " 43 CALLCODE 0x | " + rand_connection() + " "+rand_link(taintcount)+ " loc | D "+rand_link(taintcount)+ " data")
                 taintcount+=1
                 new_call.append(["CALLCODE", call["to"], call_id, to_addr])
             if output_code == "SSTORE":
                 output_line = "SSTORE " + str(taintcount) + " loc=" + call["to"] + " data=" + rand_bytestring()
-                taints.append(str(taintcount)  + " 43 SSTORE 0x | I 0 loc | D " + str(taintcount-1) +" data")
+                taints.append(str(taintcount)  + " 43 SSTORE 0x | " + rand_connection() + " "+rand_link(taintcount)+ " loc | D "+rand_link(taintcount)+ " data")
                 taintcount+=1
                 outputs.append(output_line)
         call["taints"] = taints
         call["outputs"] = outputs
 
-    return call, new_call
+    return call, new_call, taintcount
 
+# generates a fake trace for block [start] to block [stop] in folder [trace_dir]
 def gen_traces(start, stop, trace_dir):
     if not os.path.isdir(trace_dir):
         os.mkdir(trace_dir)
@@ -105,12 +112,12 @@ def gen_traces(start, stop, trace_dir):
             calls = []
             call_id = 0
             call_code = random.choice(["CALL", "CALL", "CALL", "CALL", "CALL", "CALL", "CREATE", "CREATE2"])
-            call, more_calls = create_call(call_id, call_code, caller, "", rand_bytestring())
+            call, more_calls, taintcount = create_call(call_id, call_code, caller, "", rand_bytestring(), 0)
             calls.append(call)
             call_id = 1
             while more_calls:
                 new_call = more_calls.pop(0)
-                call, more_more_calls = create_call(call_id, new_call[0], new_call[1], new_call[2], new_call[3])
+                call, more_more_calls, taintcount = create_call(call_id, new_call[0], new_call[1], new_call[2], new_call[3], taintcount)
                 calls.append(call)
                 more_calls = more_calls + more_more_calls
                 call_id+=1
@@ -137,4 +144,4 @@ def gen_traces(start, stop, trace_dir):
 
 if __name__ == "__main__":
     trace_dir = "traces/"
-    gen_traces(12345680, 12345700,trace_dir)
+    gen_traces(12345950, 12346050, trace_dir)

@@ -1,0 +1,104 @@
+[
+  {
+    "block_number": 12346003,
+    "tx_index": 0,
+    "tx_hash": "0xef3aad657438b8b9a365492b7cfab722",
+    "gas_price": 1780,
+    "origin": "0xacbd130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacbd130f5dd347984ee8",
+        "to": "0xabde18ef5a99ad49eaac",
+        "code_addr": "0xabde18ef5a99ad49eaac",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12346003,
+    "tx_index": 1,
+    "tx_hash": "0x41f36fde3311b213ab3d66c8974f36d9",
+    "gas_price": 3140,
+    "origin": "0xacbda0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CREATE2",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacbda0a6a35fb94329af",
+        "to": "0xabefa0a6a35fb94329af",
+        "code_addr": "0xabefa0a6a35fb94329af",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12346003,
+    "tx_index": 2,
+    "tx_hash": "0x4130e2ae84212c71846e660645c456b7",
+    "gas_price": 7190,
+    "origin": "0xabef130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabef130f5dd347984ee8",
+        "to": "0xabef130f5dd347984ee8",
+        "code_addr": "0xabef130f5dd347984ee8",
+        "value": 9470,
+        "data": "0xacbd130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 1 loc | D -6 data",
+          "3 42 SLOAD 0x | D 0 loc | D -6 data",
+          "4 43 SSTORE 0x | I 2 loc | D 3 data",
+          "5 43 SSTORE 0x | I 2 loc | D 4 data",
+          "6 43 SSTORE 0x | D 5 loc | D 4 data",
+          "7 43 SSTORE 0x | D 4 loc | D 4 data"
+        ],
+        "outputs": [
+          "SSTORE 4 loc=0xabef130f5dd347984ee8 data=0xabde320cad8bb33ef337",
+          "SSTORE 5 loc=0xabef130f5dd347984ee8 data=0xabcd130f5dd347984ee8",
+          "SSTORE 6 loc=0xabef130f5dd347984ee8 data=0xacdf320cad8bb33ef337",
+          "SSTORE 7 loc=0xabef130f5dd347984ee8 data=0xabef18ef5a99ad49eaac"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xabef130f5dd347984ee8": {
+        "0xabde320cad8bb33ef337": 4,
+        "0xabcd130f5dd347984ee8": 5,
+        "0xacdf320cad8bb33ef337": 6,
+        "0xabef18ef5a99ad49eaac": 7
+      }
+    }
+  }
+]

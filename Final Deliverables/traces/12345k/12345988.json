@@ -1,0 +1,91 @@
+[
+  {
+    "block_number": 12345988,
+    "tx_index": 0,
+    "tx_hash": "0x674109f1111a42151b659b31d6e59af7",
+    "gas_price": 6890,
+    "origin": "0xacdfa0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdfa0a6a35fb94329af",
+        "to": "0xabef320cad8bb33ef337",
+        "code_addr": "0xabef320cad8bb33ef337",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data",
+          "3 42 SLOAD 0x | D 2 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345988,
+    "tx_index": 1,
+    "tx_hash": "0x29b91d11aa8e42dcbf4014c2ee34e56e",
+    "gas_price": 2320,
+    "origin": "0xacdfa0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdfa0a6a35fb94329af",
+        "to": "0xabef2285b69518f776dd",
+        "code_addr": "0xabef2285b69518f776dd",
+        "value": 5040,
+        "data": "0xabefa0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345988,
+    "tx_index": 2,
+    "tx_hash": "0xb2d5582d730cd65ca9fd4474588f98b4",
+    "gas_price": 6670,
+    "origin": "0xabef2285b69518f776dd",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CREATE",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabef2285b69518f776dd",
+        "to": "0xacce320cad8bb33ef337",
+        "code_addr": "0xacce320cad8bb33ef337",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data",
+          "3 42 SLOAD 0x | I 2 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  }
+]

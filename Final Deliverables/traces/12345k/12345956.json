@@ -1,0 +1,98 @@
+[
+  {
+    "block_number": 12345956,
+    "tx_index": 0,
+    "tx_hash": "0xdf56d20b5554fa44e1492b7acc4d7c29",
+    "gas_price": 8850,
+    "origin": "0xacdf18ef5a99ad49eaac",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdf18ef5a99ad49eaac",
+        "to": "0xaccea0a6a35fb94329af",
+        "code_addr": "0xaccea0a6a35fb94329af",
+        "value": 7400,
+        "data": "0xacbda0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 43 SSTORE 0x | D 0 loc | D 0 data"
+        ],
+        "outputs": [
+          "SSTORE 1 loc=0xaccea0a6a35fb94329af data=0xacdf130f5dd347984ee8",
+          "SELFDESTRUCT 42 address=0xaccea0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xaccea0a6a35fb94329af": {
+        "0xacdf130f5dd347984ee8": 1
+      }
+    }
+  },
+  {
+    "block_number": 12345956,
+    "tx_index": 1,
+    "tx_hash": "0x45024448de410499cd9ac6a5df2c5560",
+    "gas_price": 2510,
+    "origin": "0xabefa0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CREATE2",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabefa0a6a35fb94329af",
+        "to": "0xacbd130f5dd347984ee8",
+        "code_addr": "0xacbd130f5dd347984ee8",
+        "value": 3370,
+        "data": "0xacdf130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | I 0 loc | D -6 data"
+        ],
+        "outputs": [
+          "RETURN 0 data=0xaccea0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345956,
+    "tx_index": 2,
+    "tx_hash": "0x2ff9b6fd77c06e54adaca93cd009bf6d",
+    "gas_price": 8080,
+    "origin": "0xacdf130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdf130f5dd347984ee8",
+        "to": "0xacbd18ef5a99ad49eaac",
+        "code_addr": "0xacbd18ef5a99ad49eaac",
+        "value": 3520,
+        "data": "0xacdfa0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data",
+          "3 42 SLOAD 0x | D 1 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  }
+]

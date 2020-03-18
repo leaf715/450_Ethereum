@@ -1,0 +1,103 @@
+[
+  {
+    "block_number": 12346013,
+    "tx_index": 0,
+    "tx_hash": "0x9ae71e874f047ea3a47d1eb7111f9216",
+    "gas_price": 8200,
+    "origin": "0xacce2285b69518f776dd",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacce2285b69518f776dd",
+        "to": "0xacdf130f5dd347984ee8",
+        "code_addr": "0xacdf130f5dd347984ee8",
+        "value": 60,
+        "data": "0xacbda0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 43 CALL 0x | D 0 loc | D 0 data",
+          "2 43 CALLCODE 0x | I 0 loc | D 1 data"
+        ],
+        "outputs": [
+          "CALL 1 gas=0x0 to=0xacbd130f5dd347984ee8",
+          "CALLCODE 2 gas=0x0 to=0xacdfa0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 1,
+        "call_tree_path": "0",
+        "from": "0xacdf130f5dd347984ee8",
+        "to": "0xacbd130f5dd347984ee8",
+        "code_addr": "0xacbd130f5dd347984ee8",
+        "value": 2790,
+        "data": "0xabde320cad8bb33ef337",
+        "path": "",
+        "taints": [
+          "3 42 _PUSHED 0x | D -1 x",
+          "4 42 SLOAD 0x | D 1 loc | D -6 data",
+          "5 43 CALLCODE 0x | I 4 loc | D 4 data",
+          "6 43 SSTORE 0x | D 3 loc | D 5 data",
+          "7 43 SSTORE 0x | I 5 loc | D 0 data"
+        ],
+        "outputs": [
+          "CALLCODE 5 gas=0x0 to=0xacdfa0a6a35fb94329af",
+          "SSTORE 6 loc=0xacbd130f5dd347984ee8 data=0xabdea0a6a35fb94329af",
+          "SSTORE 7 loc=0xacbd130f5dd347984ee8 data=0xacbda0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALLCODE",
+        "call_id": 2,
+        "call_tree_path": "0",
+        "from": "0xacdf130f5dd347984ee8",
+        "to": "0xacdfa0a6a35fb94329af",
+        "code_addr": "0xacdfa0a6a35fb94329af",
+        "value": 1680,
+        "data": "0xabef130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "8 42 _PUSHED 0x | D -1 x",
+          "9 42 SLOAD 0x | I 0 loc | D -6 data",
+          "10 42 SLOAD 0x | D 9 loc | D -6 data"
+        ],
+        "outputs": [
+          "SELFDESTRUCT 42 address=0xacdfa0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALLCODE",
+        "call_id": 3,
+        "call_tree_path": "1",
+        "from": "0xacbd130f5dd347984ee8",
+        "to": "0xacdfa0a6a35fb94329af",
+        "code_addr": "0xacdfa0a6a35fb94329af",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "11 42 _PUSHED 0x | D -1 x",
+          "12 42 SLOAD 0x | I 10 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {
+      "0xacbd130f5dd347984ee8": {
+        "0xabdea0a6a35fb94329af": 6,
+        "0xacbda0a6a35fb94329af": 7
+      }
+    }
+  }
+]

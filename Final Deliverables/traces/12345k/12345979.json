@@ -1,0 +1,94 @@
+[
+  {
+    "block_number": 12345979,
+    "tx_index": 0,
+    "tx_hash": "0x53acfe832e8f1470deac567352fe58a7",
+    "gas_price": 1450,
+    "origin": "0xabcd130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabcd130f5dd347984ee8",
+        "to": "0xacbd130f5dd347984ee8",
+        "code_addr": "0xacbd130f5dd347984ee8",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | I 1 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345979,
+    "tx_index": 1,
+    "tx_hash": "0xfec68aee53d47a41429927143b4b054e",
+    "gas_price": 6110,
+    "origin": "0xabde18ef5a99ad49eaac",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabde18ef5a99ad49eaac",
+        "to": "0xabefa0a6a35fb94329af",
+        "code_addr": "0xabefa0a6a35fb94329af",
+        "value": 2110,
+        "data": "0xabefa0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345979,
+    "tx_index": 2,
+    "tx_hash": "0x713abc7110f6c038d324a0a05ec706db",
+    "gas_price": 1870,
+    "origin": "0xacdf130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdf130f5dd347984ee8",
+        "to": "0xacdf130f5dd347984ee8",
+        "code_addr": "0xacdf130f5dd347984ee8",
+        "value": 4870,
+        "data": "0xacbd2285b69518f776dd",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 43 SSTORE 0x | I 0 loc | D 0 data"
+        ],
+        "outputs": [
+          "SSTORE 2 loc=0xacdf130f5dd347984ee8 data=0xacce18ef5a99ad49eaac"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xacdf130f5dd347984ee8": {
+        "0xacce18ef5a99ad49eaac": 2
+      }
+    }
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "block_number": 12346031,
+    "tx_index": 0,
+    "tx_hash": "0x65433d0a819f74b06d7c7c82c8533126",
+    "gas_price": 2630,
+    "origin": "0xacbd130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacbd130f5dd347984ee8",
+        "to": "0xabcda0a6a35fb94329af",
+        "code_addr": "0xabcda0a6a35fb94329af",
+        "value": 4710,
+        "data": "0xacbd130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 43 CALLCODE 0x | I 0 loc | D 0 data"
+        ],
+        "outputs": [
+          "CALLCODE 2 gas=0x0 to=0xabefa0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALLCODE",
+        "call_id": 1,
+        "call_tree_path": "0",
+        "from": "0xabcda0a6a35fb94329af",
+        "to": "0xabefa0a6a35fb94329af",
+        "code_addr": "0xabefa0a6a35fb94329af",
+        "value": 7590,
+        "data": "0xabefdd394468a25ba83d",
+        "path": "",
+        "taints": [
+          "3 42 _PUSHED 0x | D -1 x",
+          "4 42 SLOAD 0x | I 2 loc | D -6 data",
+          "5 42 SLOAD 0x | D 2 loc | D -6 data",
+          "6 43 SSTORE 0x | I 4 loc | D 2 data",
+          "7 43 SSTORE 0x | D 1 loc | D 0 data",
+          "8 43 SSTORE 0x | D 7 loc | D 2 data",
+          "9 43 SSTORE 0x | D 3 loc | D 7 data"
+        ],
+        "outputs": [
+          "SSTORE 6 loc=0xabefa0a6a35fb94329af data=0xabcda0a6a35fb94329af",
+          "SSTORE 7 loc=0xabefa0a6a35fb94329af data=0xabcd130f5dd347984ee8",
+          "SSTORE 8 loc=0xabefa0a6a35fb94329af data=0xacbd130f5dd347984ee8",
+          "SSTORE 9 loc=0xabefa0a6a35fb94329af data=0xabefa0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xabefa0a6a35fb94329af": {
+        "0xabcda0a6a35fb94329af": 6,
+        "0xabcd130f5dd347984ee8": 7,
+        "0xacbd130f5dd347984ee8": 8,
+        "0xabefa0a6a35fb94329af": 9
+      }
+    }
+  }
+]

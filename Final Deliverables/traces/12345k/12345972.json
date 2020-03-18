@@ -1,0 +1,68 @@
+[
+  {
+    "block_number": 12345972,
+    "tx_index": 0,
+    "tx_hash": "0x4f4d32ca1f76714d625a3f538d713c79",
+    "gas_price": 3000,
+    "origin": "0xabdea0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabdea0a6a35fb94329af",
+        "to": "0xaccea0a6a35fb94329af",
+        "code_addr": "0xaccea0a6a35fb94329af",
+        "value": 3060,
+        "data": "0xacce130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | I 0 loc | D -6 data",
+          "3 43 SSTORE 0x | D 2 loc | D 0 data",
+          "4 43 SSTORE 0x | I 2 loc | D 0 data"
+        ],
+        "outputs": [
+          "SSTORE 3 loc=0xaccea0a6a35fb94329af data=0xacce130f5dd347984ee8",
+          "SSTORE 4 loc=0xaccea0a6a35fb94329af data=0xacbda0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xaccea0a6a35fb94329af": {
+        "0xacce130f5dd347984ee8": 3,
+        "0xacbda0a6a35fb94329af": 4
+      }
+    }
+  },
+  {
+    "block_number": 12345972,
+    "tx_index": 1,
+    "tx_hash": "0xd266fea8d81006fdc33f9ea817ebb2ce",
+    "gas_price": 6900,
+    "origin": "0xabefdd394468a25ba83d",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabefdd394468a25ba83d",
+        "to": "0xacdf130f5dd347984ee8",
+        "code_addr": "0xacdf130f5dd347984ee8",
+        "value": 670,
+        "data": "0xabcd18ef5a99ad49eaac",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "block_number": 12345969,
+    "tx_index": 0,
+    "tx_hash": "0xd9d30ea44960df4483b1d3c4eea841b5",
+    "gas_price": 4680,
+    "origin": "0xaccedd394468a25ba83d",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xaccedd394468a25ba83d",
+        "to": "0xacbd130f5dd347984ee8",
+        "code_addr": "0xacbd130f5dd347984ee8",
+        "value": 680,
+        "data": "0xaccedd394468a25ba83d",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 0 loc | D -6 data",
+          "3 42 SLOAD 0x | I 1 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345969,
+    "tx_index": 1,
+    "tx_hash": "0xb7773eb4398ce2b44726a058845d5da8",
+    "gas_price": 7050,
+    "origin": "0xabde18ef5a99ad49eaac",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabde18ef5a99ad49eaac",
+        "to": "0xacbd2285b69518f776dd",
+        "code_addr": "0xacbd2285b69518f776dd",
+        "value": 4430,
+        "data": "0xaccedd394468a25ba83d",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 43 SSTORE 0x | I 0 loc | D 0 data",
+          "3 43 CALLCODE 0x | I 0 loc | D 2 data"
+        ],
+        "outputs": [
+          "SSTORE 2 loc=0xacbd2285b69518f776dd data=0xabcd130f5dd347984ee8",
+          "CALLCODE 3 gas=0x0 to=0xabefa0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALLCODE",
+        "call_id": 1,
+        "call_tree_path": "0",
+        "from": "0xacbd2285b69518f776dd",
+        "to": "0xabefa0a6a35fb94329af",
+        "code_addr": "0xabefa0a6a35fb94329af",
+        "value": 6780,
+        "data": "0xabefa0a6a35fb94329af",
+        "path": "",
+        "taints": [
+          "4 42 _PUSHED 0x | D -1 x",
+          "5 43 SSTORE 0x | I 1 loc | D 2 data"
+        ],
+        "outputs": [
+          "SSTORE 5 loc=0xabefa0a6a35fb94329af data=0xabcda0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {
+      "0xacbd2285b69518f776dd": {
+        "0xabcd130f5dd347984ee8": 2
+      },
+      "0xabefa0a6a35fb94329af": {
+        "0xabcda0a6a35fb94329af": 5
+      }
+    }
+  }
+]

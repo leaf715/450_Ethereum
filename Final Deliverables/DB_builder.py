@@ -4,6 +4,8 @@ import glob
 import shutil
 
 class DB_Builder:
+    #initializes DB Builder with the folder [log_dir] for the database with [level_size]
+    #as the size for the subfolders
     def __init__(self, log_dir, level_size):
         if not os.path.isdir(log_dir):
             os.mkdir(log_dir)
@@ -32,6 +34,8 @@ class DB_Builder:
             os.mkdir(folder)
         return folder
 
+    # builds the db with traces in [trace_dir] from block [start] to block [end]
+    # if [restart], the db directory wil be cleared first
     def build_DB(self, trace_dir, start, end, restart = None):
 
         if restart:
@@ -94,4 +98,4 @@ class DB_Builder:
 
 if __name__ == "__main__":
     DB = DB_Builder("State_DB/", 2)
-    DB.build_DB("traces/", 12345670, 12345705, True)
+    DB.build_DB("traces/", 12345900, 12346100, True)

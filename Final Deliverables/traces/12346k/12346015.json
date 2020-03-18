@@ -1,0 +1,88 @@
+[
+  {
+    "block_number": 12346015,
+    "tx_index": 0,
+    "tx_hash": "0x949dbcf14ece5444c30c080c8861270e",
+    "gas_price": 3890,
+    "origin": "0xabef130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CREATE",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabef130f5dd347984ee8",
+        "to": "0xacbd18ef5a99ad49eaac",
+        "code_addr": "0xacbd18ef5a99ad49eaac",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12346015,
+    "tx_index": 1,
+    "tx_hash": "0x7461035279bd966cea663f622dadf87b",
+    "gas_price": 1780,
+    "origin": "0xacdfa0a6a35fb94329af",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdfa0a6a35fb94329af",
+        "to": "0xabcd2285b69518f776dd",
+        "code_addr": "0xabcd2285b69518f776dd",
+        "value": 670,
+        "data": "0xabef130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | I 1 loc | D -6 data",
+          "3 42 SLOAD 0x | D 1 loc | D -6 data",
+          "4 43 SSTORE 0x | D 0 loc | D 1 data",
+          "5 43 CALL 0x | D 3 loc | D 4 data"
+        ],
+        "outputs": [
+          "SSTORE 4 loc=0xabcd2285b69518f776dd data=0xabcd130f5dd347984ee8",
+          "CALL 5 gas=0x0 to=0xacbda0a6a35fb94329af"
+        ]
+      },
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 1,
+        "call_tree_path": "0",
+        "from": "0xabcd2285b69518f776dd",
+        "to": "0xacbda0a6a35fb94329af",
+        "code_addr": "0xacbda0a6a35fb94329af",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "6 42 _PUSHED 0x | D -1 x",
+          "7 42 SLOAD 0x | D 1 loc | D -6 data",
+          "8 42 SLOAD 0x | I 5 loc | D -6 data",
+          "9 42 SLOAD 0x | D 8 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {
+      "0xabcd2285b69518f776dd": {
+        "0xabcd130f5dd347984ee8": 4
+      }
+    }
+  }
+]

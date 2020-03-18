@@ -2,10 +2,13 @@ import json
 import os
 import glob
 import shutil
-from Parser.test_cross_vis import test
+# from Parser.test_cross_vis import test
 import math
+from struct_dump import _pprint
 
 class Cross_Linker:
+    # initialize cross linker with logs in [log_dir] and traces in [trace_dir]
+    # with the log directory orgainzed in levels of [level_size]
     def __init__(self, log_dir, trace_dir, level_size):
         if not os.path.isdir(log_dir):
             os.error("no such log directory")
@@ -59,30 +62,29 @@ class Cross_Linker:
         time = stores[i].split(" ")
         return [int(store[1]), int(store[2])]
 
+    # links trxn [trace] [tx_id] in the [direction] direction
     def link(self, trace, tx_id, direction):
         path = self.get_trace(self.num_str8(trace))
         if os.path.exists(path):
             with open(path, "r") as f:
                 data = json.load(f)
+                if tx_id >= len(data):
+                    return {}
                 tx = data[tx_id]
             if direction == "forward":
                 contract_dict = {}
                 for loc in tx["storage_written"].keys():
                     linked_dict = {}
                     for slot in tx["storage_written"][loc].keys():
-                        # print("checking contract "+loc+" slot "+slot)
                         serial_id = tx["storage_written"][loc][slot]
                         linked_taints = set()
                         storage_path = self.get_state_folder(loc)+"storage-write.log"
                         if os.path.exists(storage_path):
-                            # print("SW found "+ storage_path)
                             f_sw = open(storage_path, "r")
                             stores = f_sw.readlines()
                             timeframe = [[trace, tx_id], self.get_next(stores, trace, slot, tx_id)]
                             call_path = self.get_state_folder(loc)+"call.log"
                             if os.path.exists(call_path):
-                                # print("Calls found "+call_path)
-                                # print(timeframe)
                                 f_call = open(call_path, "r")
                                 calls = f_call.readlines()
                                 i = 0
@@ -114,7 +116,6 @@ class Cross_Linker:
                     contract_dict[loc] = linked_dict
                 return contract_dict
             elif direction == "backward":
-                # print("backwards")
                 linked_dict = {}
                 for call in tx["call_level_traces"]:
                     for taint in call["taints"]:
@@ -122,40 +123,33 @@ class Cross_Linker:
                         serial_id = int(taint_info[0])
                         deps = [dep.split(" ") for dep in taint.split(" | ")[1:]]
                         if taint_info[2] == "SLOAD":
-                            # print("SLOAD found")
                             for dep in deps:
                                 if dep[1] == "-6":
                                     loc = call["to"]
                                     storage_path = self.get_state_folder(loc)+"storage-write.log"
-                                    if os.path.exists(storage_path): #check sw.log of contract to find last trxn that writes to it
-                                        # print("SW log found "+storage_path)
+                                    if os.path.exists(storage_path):
                                         f_sw = open(storage_path, "r")
                                         stores = f_sw.readlines()
                                         store = self.get_latest(stores, trace, tx_id)
                                         if store:
-                                            # print(store)
                                             slot = store[0]
                                             last_block = store[1]
                                             last_trxn = store[2]
                                             linked_path = self.get_trace(last_block)
                                             if os.path.exists(linked_path):
-                                                # print("linked TX found "+linked_path)
                                                 with open(linked_path, "r") as f:
                                                     linked_data = json.load(f)
                                                     linked_tx = linked_data[int(last_trxn)]
-                                                if loc in linked_tx["storage_written"]: #find taint id of writing trxn that wrote to slot in contract
+                                                if loc in linked_tx["storage_written"]:
                                                     if slot in linked_tx["storage_written"][loc]:
                                                         linked_dict[serial_id] = [int(last_block), int(last_trxn), linked_tx["storage_written"][loc][slot]]
                                     break
                 return linked_dict
 
 
-
-
-
 if __name__ == "__main__":
     CL = Cross_Linker("State_DB/", "traces/", 2)
-    print(CL.link(12345699, 0, "backward"))
-    res=CL.link(12345699, 0, "backward")
-    print(CL.link(12345678 , 0, "forward"))
+    print(CL.link(12345999, 0, "backward"))
+    # res=CL.link(12345699, 0, "backward")
+    print(CL.link(12345999 , 0, "forward"))
     # test("../ContractDB/traces/12345k/12345699.json", 0,res)

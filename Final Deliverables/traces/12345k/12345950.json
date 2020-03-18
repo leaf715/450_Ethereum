@@ -1,0 +1,33 @@
+[
+  {
+    "block_number": 12345950,
+    "tx_index": 0,
+    "tx_hash": "0xa303e2af1334f2c15baec6a5bb11efed",
+    "gas_price": 4550,
+    "origin": "0xacbd130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CREATE2",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacbd130f5dd347984ee8",
+        "to": "0xabcd130f5dd347984ee8",
+        "code_addr": "0xabcd130f5dd347984ee8",
+        "value": 8840,
+        "data": "0xaccedd394468a25ba83d",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data",
+          "2 42 SLOAD 0x | D 1 loc | D -6 data"
+        ],
+        "outputs": [
+          "RETURN 0 data=0xacbda0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {}
+  }
+]

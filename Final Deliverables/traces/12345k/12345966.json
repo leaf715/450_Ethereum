@@ -1,0 +1,87 @@
+[
+  {
+    "block_number": 12345966,
+    "tx_index": 0,
+    "tx_hash": "0xb424ca6ba5bcfd55d54c929619e9bc0b",
+    "gas_price": 3980,
+    "origin": "0xacdf130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": true,
+        "error_message": null,
+        "call_type": "CREATE",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xacdf130f5dd347984ee8",
+        "to": "0xacbd130f5dd347984ee8",
+        "code_addr": "0xacbd130f5dd347984ee8",
+        "value": 2580,
+        "data": "0xabcd130f5dd347984ee8",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | D 0 loc | D -6 data"
+        ],
+        "outputs": [
+          "RETURN 0 data=0xaccea0a6a35fb94329af"
+        ]
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345966,
+    "tx_index": 1,
+    "tx_hash": "0xe45f52dab04b37f5bb5425cb91269fc4",
+    "gas_price": 9260,
+    "origin": "0xabcd130f5dd347984ee8",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xabcd130f5dd347984ee8",
+        "to": "0xacdfa0a6a35fb94329af",
+        "code_addr": "0xacdfa0a6a35fb94329af",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  },
+  {
+    "block_number": 12345966,
+    "tx_index": 2,
+    "tx_hash": "0x74649a5ab9082dde92134f6c7cced363",
+    "gas_price": 5900,
+    "origin": "0xaccedd394468a25ba83d",
+    "call_level_traces": [
+      {
+        "success": false,
+        "error_message": "unknown error",
+        "call_type": "CALL",
+        "call_id": 0,
+        "call_tree_path": "",
+        "from": "0xaccedd394468a25ba83d",
+        "to": "0xabef130f5dd347984ee8",
+        "code_addr": "0xabef130f5dd347984ee8",
+        "value": 0,
+        "data": "0x",
+        "path": "",
+        "taints": [
+          "0 42 _PUSHED 0x | D -1 x",
+          "1 42 SLOAD 0x | I 0 loc | D -6 data"
+        ],
+        "outputs": []
+      }
+    ],
+    "storage_written": {}
+  }
+]
