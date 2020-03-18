@@ -97,5 +97,5 @@ class DB_Builder:
 
 
 if __name__ == "__main__":
-    DB = DB_Builder("State_DB/", 2)
-    DB.build_DB("traces/", 12345900, 12346100, True)
+    DB = DB_Builder("DB_eval/", 2)
+    DB.build_DB("traces_eval/", 12345900, 12346100, True)

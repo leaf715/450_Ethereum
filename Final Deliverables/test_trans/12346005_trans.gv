@@ -1,0 +1,14 @@
+// TEST
+digraph {
+	n2 [label=CALLCODE shape=oval]
+	n1 [label=CALLCODE shape=oval]
+	n0 [label=_PUSHED shape=oval]
+	n4 [label=SLOAD shape=oval]
+	n10 [label=SLOAD shape=oval]
+	n0 -> n2 [label="" color=red style=dashed]
+	n1 -> n2 [label="" color="" style=solid]
+	n0 -> n1 [label="" color="" style=solid]
+	n0 -> n1 [label="" color=red style=dashed]
+	-6 -> n4 [label="" color="" style=solid]
+	-6 -> n10 [label="" color="" style=solid]
+}

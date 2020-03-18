@@ -85,12 +85,13 @@ class Transformer:
                         greytaints.add(taint)
             if taint.serial_id in outputset:
                 for id in taint.Dsource_ids.union(taint.Isource_ids):
-                    rhset.add(taint_dict[id])
-                    greytaints.add(taint_dict[id])
+                    if id >= 0:
+                        rhset.add(taint_dict[id])
+                        greytaints.add(taint_dict[id])
         for ltaint in lhset:
             for source_id in ltaint.Dsource_ids:
                 if source_id in call_trace_dict:
-                    if call_trace_dict[source_id] == call.call_id and taint_dict[source_id] not in lhset:
+                    if call_trace_dict[source_id] == call.call_id and taint_dict[source_id] not in lhset and taint_dict[source_id] not in rhset:
                         greytaints.add(taint_dict[source_id])
                         if ltaint.serial_id in greydependencies:
                             greydependencies[ltaint.serial_id].add(GreyDependency("D", source_id))
@@ -98,7 +99,7 @@ class Transformer:
                             greydependencies[ltaint.serial_id] = set([GreyDependency("D", source_id)])
             for source_id in ltaint.Isource_ids:
                 if source_id in call_trace_dict:
-                    if call_trace_dict[source_id] == call.call_id:
+                    if call_trace_dict[source_id] == call.call_id and taint_dict[source_id] not in lhset and taint_dict[source_id] not in rhset:
                         greytaints.add(taint_dict[source_id])
                         if ltaint.serial_id in greydependencies:
                             greydependencies[ltaint.serial_id].add(GreyDependency("I", source_id))
@@ -173,10 +174,12 @@ class Transformer:
         return tx
 
 if __name__ == "__main__":
-    trs = Transformer("traces/", 12345958)
-    call = trs.greybox_call(2, 0)
-    graph = Graph([call])
-    graph.render("%s_%d.gv" % (12345958, 0))
-    trxn = trs.greybox_trxn(2)
-    graph = Graph(trxn.call_level_traces)
-    graph.render("%s_%d.gv" % (12345958, 111))
+    for i in range(12345990, 12346010):
+        print(i)
+        trs = Transformer("traces_eval/", i)
+        call = trs.greybox_call(0, 0)
+        graph = Graph([call])
+        graph.render("test_trans/%s_call.gv" % i)
+        trxn = trs.greybox_trxn(0)
+        graph = Graph(trxn.call_level_traces)
+        graph.render("test_trans/%s_trans.gv" % i)

@@ -1,0 +1,7 @@
+// TEST
+digraph {
+	n0 [label=_PUSHED shape=oval]
+	n1 [label=SLOAD shape=oval]
+	n0 -> n1 [label="" color=red style=dashed]
+	-6 -> n1 [label="" color="" style=solid]
+}

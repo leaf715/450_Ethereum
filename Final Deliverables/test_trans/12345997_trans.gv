@@ -1,0 +1,20 @@
+// TEST
+digraph {
+	n1 [label=SLOAD shape=oval]
+	n3 [label=SSTORE shape=oval]
+	n2 [label=SLOAD shape=oval]
+	n4 [label=CALL shape=oval]
+	n5 [label=CALLCODE shape=oval]
+	n8 [label=SLOAD shape=oval]
+	n0 [label=_PUSHED shape=oval]
+	-6 -> n1 [label="" color="" style=solid]
+	n0 -> n3 [label="" color=red style=dashed]
+	n0 -> n3 [label="" color="" style=solid]
+	n1 -> n2 [label="" color=red style=dashed]
+	n2 -> n2 [label="" color="" style=""]
+	-6 -> n2 [label="" color="" style=solid]
+	n0 -> n4 [label="" color="" style=solid]
+	n2 -> n4 [label="" color="" style=solid]
+	n2 -> n5 [label="" color="" style=solid]
+	-6 -> n8 [label="" color="" style=solid]
+}

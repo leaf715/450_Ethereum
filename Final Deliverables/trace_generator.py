@@ -143,5 +143,5 @@ def gen_traces(start, stop, trace_dir):
             f.write(json.dumps(trxns, indent=2))
 
 if __name__ == "__main__":
-    trace_dir = "traces/"
+    trace_dir = "traces_eval/"
     gen_traces(12345950, 12346050, trace_dir)

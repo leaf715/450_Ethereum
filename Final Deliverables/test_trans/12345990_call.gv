@@ -1,0 +1,12 @@
+// TEST
+digraph {
+	n2 [label=SLOAD shape=oval]
+	n0 [label=_PUSHED shape=oval]
+	n3 [label=SLOAD shape=oval]
+	n1 [label=SLOAD shape=oval]
+	-6 -> n2 [label="" color="" style=solid]
+	n0 -> n2 [label="" color=red style=dashed]
+	-6 -> n3 [label="" color="" style=solid]
+	n0 -> n1 [label="" color=red style=dashed]
+	-6 -> n1 [label="" color="" style=solid]
+}

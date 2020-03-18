@@ -50,14 +50,15 @@ class Cross_Linker:
         i = 0
         while i < len(stores):
             store = stores[i].strip().split(" ")
-            if store[0] == slot:
-                if int(store[1]) == trace:
-                    if int(store[2]) > tx_id:
-                        break
-                if int(store[1]) > trace:
-                    break;
+            # if store[0] == slot:
+            if int(store[1]) == trace:
+                if int(store[2]) > tx_id:
+                    break
+            if int(store[1]) > trace:
+                break;
             i+=1
         if i == len(stores):
+            print("infinite")
             return [math.inf,math.inf]
         time = stores[i].split(" ")
         return [int(store[1]), int(store[2])]
@@ -112,7 +113,7 @@ class Cross_Linker:
                                     if i >= len(calls):
                                         break
                                     call = calls[i].strip().split(" ")
-                        linked_dict[serial_id] = linked_taints
+                        linked_dict[serial_id] = list(linked_taints)
                     contract_dict[loc] = linked_dict
                 return contract_dict
             elif direction == "backward":
@@ -148,8 +149,12 @@ class Cross_Linker:
 
 
 if __name__ == "__main__":
-    CL = Cross_Linker("State_DB/", "traces/", 2)
-    print(CL.link(12345999, 0, "backward"))
+    CL = Cross_Linker("DB_eval/", "traces_eval/", 2)
+    for i in range(12345950, 12346050):
+        print(i)
+        print("backward")
+        print(json.dumps(CL.link(i, 0, "backward"), indent = 2))
     # res=CL.link(12345699, 0, "backward")
-    print(CL.link(12345999 , 0, "forward"))
+        print("forward")
+        print(json.dumps(CL.link(i, 0, "forward"), indent = 2))
     # test("../ContractDB/traces/12345k/12345699.json", 0,res)
