@@ -44,11 +44,6 @@ def degree_hist(nodes1, nodes2):
             hscore+=j*(i+1)
             denom+=i+1
     hscore/=denom
-    # print(diff)
-    # print(his1)
-    # print(his2)
-    # print(hscores)
-    # print(hscore)
     return hscore
 
 def sub_sim(subg1, subg2):
