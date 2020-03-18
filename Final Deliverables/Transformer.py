@@ -2,7 +2,7 @@ import json
 import os
 import glob
 import shutil
-from parser_dest import Dependency, Taint, Output, CallLevelTrace, TransactionLevelTrace, parse_file
+from parser import Dependency, Taint, Output, CallLevelTrace, TransactionLevelTrace, parse_file
 from struct_dump import _pprint
 from visualization import Graph
 

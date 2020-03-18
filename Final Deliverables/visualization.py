@@ -66,7 +66,7 @@ class Graph:
 
 
 def test(file_name, ind):
-    from parser_1 import parse_file
+    from parser import parse_file
     from struct_dump import _pprint
     assert file_name[-5:] == ".json"
     trace = parse_file(file_name)
@@ -79,4 +79,4 @@ def test(file_name, ind):
     _pprint(graphs)
 
 if __name__ == "__main__":
-    test("traces/12345k/12345679.json",0)
+    test("traces/12345k/12345979.json",0)
