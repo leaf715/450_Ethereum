@@ -79,5 +79,3 @@ To run:
   - *output_filename: name of pdf file to be produced*
   - Creates a visual graph of the transaction
   - **Example Visualizations in test_trans/**
-
-
