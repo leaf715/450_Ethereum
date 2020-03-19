@@ -78,5 +78,5 @@ To run:
 - Graph.render(output_filename):
   - *output_filename: name of pdf file to be produced*
   - Creates a visual graph of the transaction
-- (test_cross_vis is the visualiser for backward linking , taking the trace and the output of cross_linker as input)
   - **Example Visualizations in test_trans/**
+- (test_cross_vis is the visualiser for cross_linking(backward) , taking the trace and the output of cross_linker as input)
