@@ -21,7 +21,7 @@ to run:
 - parse_file(file_name)
   - *file_name: trace file to parse*
   - Returns a list of TransactionLevelTrace objects which contain CallLevelTrace, Output, Taint, and Dependency Objects
-(another version of parser is available parser_1.py which is strictly as per the graph analysis library)
+- (another version of parser is available parser_1.py which is strictly as per the graph analysis library)
 #### Module 1: DB_builder.py
 Builds state database for contracts called in the traces
 To run:
