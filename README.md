@@ -2,7 +2,7 @@
 ## Folders
 - Contract DB: Workspace for Modules for Graph Library
 - Final Deliverables: Finalized Codebase and Evaluation Data
-- Parser: Workspace for Parser
+- Parser: Workspace for Parser and visualizer
 - Similarity: Old Similarity Algorithm from Midterm
 
 ## Codebase
